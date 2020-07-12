@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import '~bootstrap\dist\css\bootstrap.css';
+
+body{
+    padding-top: 50px;
+}
+
+/* Login Page */
+
+.form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+  }
+
+.form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+  }
+  
+.form-label-group input:-ms-input-placeholder {
+    color: transparent;
+  }
+  
+.form-label-group input::-ms-input-placeholder {
+    color: transparent;
+  }
+  
+.form-label-group input::-moz-placeholder {
+    color: transparent;
+  }
+  
+.form-label-group input::placeholder {
+    color: transparent;
+  }
+  
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: 1.25rem;
+    padding-bottom: .25rem;
+  }
+  
+.form-label-group input:not(:placeholder-shown) ~ label {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    font-size: 12px;
+    color: #777;
+  }
+
+.disp-inline{display:inline}
+.disp-block{display:block}
+.disp-inlineBlock{display:inline-block}
+.disp-inline-flex{display:inline-flex}
+.signinForgetPass{color:#0070cd!important;font-size:12px;line-height:32px;margin:0 4px}
+.pull-right{padding-right:15px;padding-left:0;text-align:right}
+#signInLabel a{position:relative;bottom:4px;border-bottom-width:2px; margin:0 0 0 12px}
+#signInLabel{font-weight:600}
+.form-group{margin-bottom:15px;width:calc(100% - 55px)}
+
+
+/* Registration Page */
+
+.genderControl label:first-child
+.genderControl label{color:#ef0f0f;line-height:34px}
+.sourcesans-regular{font-weight:400;font-style:normal}
+#divk label{margin:3px 0 0!important;font-weight:400}
+.col-sm-9{float:left; width:75%}
+
+
+
