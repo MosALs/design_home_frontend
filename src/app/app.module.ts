@@ -1,18 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
 import { NgModule } from '@angular/core';
-
-import { RouterModule } from "@angular/router";
-import { NavbarComponent } from './navbar/navbar.component';
+import { AppComponent } from './app.component';
 import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SharedModuleModule } from './shared-module/shared-module.module';
+import { AppRoutingModule } from './app-routing.module';
 import { MainModule } from './main/main.module';
-import { MainRoutingModule } from './main/main-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { BackEndFacadService } from './facad/back-end-facad.service';
+import { AuthFacadService } from './facad/auth-facad.service';
+
+
 
 
 @NgModule({
@@ -22,18 +21,17 @@ import { MainRoutingModule } from './main/main-routing.module';
     FooterComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-    RouterModule,
     MainModule,
-    MainRoutingModule
+    SharedModuleModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule
+  
   ],
 
 
-  providers: [],
+  providers: [BackEndFacadService,AuthFacadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
