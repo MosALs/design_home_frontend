@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UIPagesUrls } from 'src/app/constants/UI_URLs';
-import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { AuthFacadService } from 'src/app/facad/auth-facad.service';
+import { AuthenticationRequest } from 'src/app/core/models/AuthenticationRequest.model';
 
 @Component({
   selector: 'login',
@@ -14,14 +15,14 @@ export class LoginComponent implements OnInit {
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
+  private  _authenticationRequest :AuthenticationRequest;
 
 
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthenticationService
-
+    private _authFacadService: AuthFacadService
   ) { }
 
   async ngOnInit() {
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    if (await this.authService.checkAuthenticated()) {
+    if (await this._authFacadService.checkAuthenticated()) {
       await this.router.navigate([this.returnUrl]);
     }
   }
@@ -45,7 +46,15 @@ export class LoginComponent implements OnInit {
       try {
         const username = this.formA.get('username').value;
         const password = this.formA.get('password').value;
-        await this.authService.login(username, password);
+        this._authenticationRequest.username = username;
+        this._authenticationRequest.password = password;
+        console.log("LoginComponent == onSubmit() ==  if (this.formA.valid) == try")
+        await this._authFacadService.authenticate(this._authenticationRequest).subscribe(
+          (token:String) => {
+            console.log("LoginComponent == onSubmit() == token: ",token);
+            
+          } 
+        );
       } catch (err) {
         this.loginInvalid = true;
       }
