@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatIconModule, MatToolbarModule, MatTableModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule, MatCardModule, MatSlideToggleModule, MatSelectModule, MatLabel, MatFormFieldModule, MatOptionModule, MatMenuModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { CustomFormsModule } from 'ng2-validation';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -33,6 +34,8 @@ import { CustomFormsModule } from 'ng2-validation';
   MatFormFieldModule,
 
   MatOptionModule
+
+
   ],
   exports :[
     ReactiveFormsModule,
@@ -55,7 +58,8 @@ import { CustomFormsModule } from 'ng2-validation';
   MatSelectModule,
   MatLabel,
   MatFormFieldModule,
-  MatOptionModule
+  MatOptionModule,
+  HttpClientModule
   ]
 
 })
