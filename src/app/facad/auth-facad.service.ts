@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthFacadService {
 
+  private  _authenticationRequest: AuthenticationRequest= new AuthenticationRequest();
+
   constructor(private _authService: AuthenticationService) { }
 
 
@@ -16,8 +18,10 @@ export class AuthFacadService {
     return this._authService.checkAuthenticated();
   }
 
-  authenticate(_authenticationRequest:AuthenticationRequest):Observable<Object>{
+  authenticate(username: string,password: string):Observable<Object>{
     // function call.
-    return this._authService.authenticate(_authenticationRequest);
+    this._authenticationRequest.username=  username;
+    this._authenticationRequest.password = password;
+    return this._authService.authenticate(this._authenticationRequest);
   }
 }

@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UIPagesUrls } from 'src/app/constants/UI_URLs';
 import { AuthFacadService } from 'src/app/facad/auth-facad.service';
 import { AuthenticationRequest } from 'src/app/core/models/AuthenticationRequest.model';
+import {log} from "util";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'login',
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
-  private  _authenticationRequest :AuthenticationRequest;
+
 
 
   constructor(
@@ -46,16 +48,15 @@ export class LoginComponent implements OnInit {
       try {
         const username = this.formA.get('username').value;
         const password = this.formA.get('password').value;
-        this._authenticationRequest.username = username;
-        this._authenticationRequest.password = password;
-        console.log("LoginComponent == onSubmit() ==  if (this.formA.valid) == try")
-        await this._authFacadService.authenticate(this._authenticationRequest).subscribe(
-          (token:String) => {
-            console.log("LoginComponent == onSubmit() == token: ",token);
-            
-          } 
+        console.log('LoginComponent == onSubmit() ==  if (this.formA.valid) == try');
+        await this._authFacadService.authenticate(username,password).subscribe(
+          (token: string) => {
+            console.log('LoginComponent == onSubmit() == token: ', token);
+          }
         );
       } catch (err) {
+        err:HttpErrorResponse;
+        log()
         this.loginInvalid = true;
       }
     } else {

@@ -25,7 +25,7 @@ export class AuthenticationService {
 
   // function definition.
    authenticate(_authenticationRequest: AuthenticationRequest):Observable<Object>{
-    this._obs = this.http.post(Authentication.AUTHENTICATE_URL,_authenticationRequest);
+    this._obs = this.http.post(Authentication.AUTHENTICATE_URL, _authenticationRequest);
     return this._obs;
   }
 }
