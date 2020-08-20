@@ -32,7 +32,6 @@ import { HttpClientModule } from '@angular/common/http';
   MatSlideToggleModule,
   MatSelectModule,
   MatFormFieldModule,
-
   MatOptionModule
 
 

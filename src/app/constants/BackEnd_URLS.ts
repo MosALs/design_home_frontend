@@ -1,6 +1,6 @@
 export const  Authentication={
-    REGISTERATION_URL : "",
-    AUTHENTICATE_URL:"http://localhost:8080/authenticate"
+    REGISTERATION_URL : "http://localhost:8090/rest/user/Register",
+    AUTHENTICATE_URL:"http://localhost:8090/authenticate"
 };
 
 export const  UserEnitiyURLS={

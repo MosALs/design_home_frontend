@@ -4,7 +4,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UIPagesUrls } from 'src/app/constants/UI_URLs';
 import { AuthFacadService } from 'src/app/facad/auth-facad.service';
 import { AuthenticationRequest } from 'src/app/core/models/AuthenticationRequest.model';
-import {log} from "util";
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
@@ -22,7 +21,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
     private router: Router,
     private _authFacadService: AuthFacadService
   ) { }
@@ -56,7 +54,7 @@ export class LoginComponent implements OnInit {
         );
       } catch (err) {
         err:HttpErrorResponse;
-        log()
+       // log()
         this.loginInvalid = true;
       }
     } else {
