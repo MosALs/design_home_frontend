@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UIPagesUrls } from 'src/app/constants/UI_URLs';
-import { AuthFacadService } from 'src/app/facad/auth-facad.service';
-import { AuthenticationRequest } from 'src/app/core/models/AuthenticationRequest.model';
+import { AuthenticationRequest } from 'src/app/core/models/model/AuthenticationRequest.model';
 import {HttpErrorResponse} from "@angular/common/http";
+import { AuthFacadeService } from 'src/app/facade/auth-facade.service';
 
 @Component({
   selector: 'login',
@@ -22,12 +22,12 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private _authFacadService: AuthFacadService
+    private _authFacadService: AuthFacadeService
   ) { }
 
   async ngOnInit() {
     this.returnUrl = UIPagesUrls.LOGIN_PAGE_URL;
-
+   
     this.formA = this.fb.group({
       username: ['', Validators.email],
       password: ['', Validators.required]

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatIconModule, MatToolbarModule, MatTableModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule, MatCardModule, MatSlideToggleModule, MatSelectModule, MatLabel, MatFormFieldModule, MatOptionModule, MatMenuModule } from '@angular/material';
+import { MatButtonModule, MatSidenavModule,MatListModule,MatIconModule, MatToolbarModule, MatTableModule, MatDividerModule, MatProgressSpinnerModule, MatInputModule, MatCardModule, MatSlideToggleModule, MatSelectModule, MatLabel, MatFormFieldModule, MatOptionModule, MatMenuModule } from '@angular/material';
+import {MatRadioModule} from '@angular/material/radio';
 import { RouterModule } from '@angular/router';
 import { CustomFormsModule } from 'ng2-validation';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     CommonModule,
     MatButtonModule,
+    MatRadioModule,
     MatIconModule,
     RouterModule,
     FormsModule,
@@ -32,8 +33,10 @@ import { HttpClientModule } from '@angular/common/http';
   MatSlideToggleModule,
   MatSelectModule,
   MatFormFieldModule,
-  MatOptionModule
-
+  MatOptionModule,
+  MatSidenavModule,
+  MatListModule,
+  ToastrModule.forRoot()
 
   ],
   exports :[

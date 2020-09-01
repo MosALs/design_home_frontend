@@ -1,17 +1,16 @@
 import { Injectable, Injector } from '@angular/core';
-import { AuthenticationService } from '../core/services/authentication.service';
 import { RegistrationService } from '../core/services/registration.service';
+import { AuthenticationService } from '../core/services/authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BackEndFacadService {
+export class BackEndFacadeService {
 
   private _authService: AuthenticationService;
   private _registrationService: RegistrationService;
-  constructor(private injector: Injector
 
-  ) { }
+  constructor(private injector: Injector) { }
 
 
   public getAuthenticationService(): AuthenticationService {
@@ -23,7 +22,7 @@ export class BackEndFacadService {
 
   
 
-  public getRegistrationService(): RegistrationService {
+  public postRegistrationService(): RegistrationService {
 
     if (!this._registrationService) {
       this._registrationService = this.injector.get(RegistrationService);

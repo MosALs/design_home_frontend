@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from '../core/services/authentication.service';
-import { AuthenticationRequest } from '../core/models/AuthenticationRequest.model';
+import { AuthenticationRequest } from '../core/models/model/AuthenticationRequest.model';
 import { Observable } from 'rxjs';
-import { BackEndFacadService } from './back-end-facad.service';
+import { BackEndFacadeService } from './back-end-facade.service';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthFacadService {
+export class AuthFacadeService {
 
   private  _authenticationRequest: AuthenticationRequest= new AuthenticationRequest();
 
-  constructor(private _backEndFacadService: BackEndFacadService) { }
+  constructor(private _backEndFacadService: BackEndFacadeService) { }
 
 
   checkAuthenticated():boolean{

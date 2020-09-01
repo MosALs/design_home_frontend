@@ -12,7 +12,7 @@ export class AppUser {
     deliveryNoDelivery:string;
     websiteLink:string;
     password:string;
-    active:boolean;
     facbookLink:string;
+    userGenderapp:boolean=false;
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Authentication } from 'src/app/constants/BackEnd_URLS';
-import { AuthenticationRequest } from '../models/AuthenticationRequest.model';
+import { AuthenticationRequest } from '../models/model/AuthenticationRequest.model';
 import { Observable } from 'rxjs';
 
 

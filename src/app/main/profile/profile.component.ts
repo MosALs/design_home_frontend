@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UIPagesUrls } from 'src/app/constants/UI_URLs';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { Router } from '@angular/router';
-import { BackEndFacadService } from 'src/app/facad/back-end-facad.service';
-import { AuthFacadService } from 'src/app/facad/auth-facad.service';
+import { AuthFacadeService } from 'src/app/facade/auth-facade.service';
+
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   private returnUrl: string;
   
   constructor(   private router: Router,
-    private _authFacadServie:AuthFacadService) { }
+    private _authFacadServie:AuthFacadeService) { }
 
   async ngOnInit() {
     console.log("ProfileComponent -- ngOnInit");

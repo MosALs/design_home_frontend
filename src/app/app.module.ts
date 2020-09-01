@@ -8,8 +8,11 @@ import { MainModule } from './main/main.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { BackEndFacadService } from './facad/back-end-facad.service';
-import { AuthFacadService } from './facad/auth-facad.service';
+import { BackEndFacadeService } from './facade/back-end-facade.service';
+import { AuthFacadeService } from './facade/auth-facade.service';
+import { RegisterFacadeService } from './facade/register-facade.service';
+
+
 
 
 
@@ -26,12 +29,12 @@ import { AuthFacadService } from './facad/auth-facad.service';
     SharedModuleModule,
     BrowserModule,
     BrowserAnimationsModule,
-    CommonModule
-  
+    CommonModule,
+     
   ],
 
 
-  providers: [BackEndFacadService,AuthFacadService],
+  providers: [BackEndFacadeService,AuthFacadeService,RegisterFacadeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
