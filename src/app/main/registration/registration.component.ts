@@ -18,7 +18,7 @@ export class RegistrationComponent implements OnInit {
   foods= ['Steak','Pizza','Tacos' ];
   areas= ['haram','tanta','alx' ];
   specialization= ['نجار','سباك','كهربائى' ];
-  userGenderapp= ['ذكر','انثى' ];
+  userGenderapp= ['Male','Female' ];
   
   accountType:AccountTypes= new AccountTypes();
 

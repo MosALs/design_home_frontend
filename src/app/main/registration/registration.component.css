@@ -1,9 +1,18 @@
-   mat-card {
-    max-width: 400px;
-    margin: 2em auto;
-    text-align: center;
-  } 
+    mat-card {
+      box-shadow: none !important;
+   } 
 
    mat-form-field {
     display: block;
-  } 
+  }
+  
+  .genderControl label:first-child
+  .genderControl label{color:#ef0f0f;line-height:34px}
+  .sourcesans-regular{font-weight:400;font-style:normal}
+  #divk label{margin:3px 0 0!important;font-weight:400}
+  .col-sm-9{float:left; width:75%}
+
+  .ss{
+    color: rgba(0, 0, 0, 0.54);
+    padding-left: 13px;
+  }
