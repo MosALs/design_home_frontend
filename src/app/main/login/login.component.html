@@ -1,73 +1,39 @@
-﻿<!-- Reactive driven forms -->
-<mat-card>
-    <mat-card-content>
-      <form [(formGroup)]="formA" (ngSubmit)="onSubmit()">
-        <h2>Log In</h2>
-        <mat-error *ngIf="loginInvalid">
-          The username and password were not recognised
-        </mat-error>
-        <mat-form-field class="full-width-input">
-          <input matInput placeholder="Email" formControlName="username" required>
-          <mat-error>
-            Please provide a valid email address
-          </mat-error>
-        </mat-form-field>
-        <mat-form-field class="full-width-input">
-          <input matInput type="password" placeholder="Password" formControlName="password" required>
-          <mat-error>
-            Please provide a valid password
-          </mat-error>
-        </mat-form-field>
-        <button mat-raised-button color="primary">Login</button>
-        <button routerLink="/registration" color="primary" mat-raised-button>Registrat</button>
-      </form>
-    </mat-card-content>
-  </mat-card>
-
-
-
-
-<!-- <form class="form-signin">
-    <div class="text-center">
-        <h1 class="h3 mb-3 font-weight-normal">Login to KMG</h1>
+﻿<div class="row m-0">
+  <div class="col-1 m-0">
+  </div>
+  <div class="col-4 m-0">
+    <div class="row">
+      <!-- Reactive driven forms -->
+      <mat-card class="col-12">
+        <mat-card-content>
+          <form [(formGroup)]="formA" (ngSubmit)="onSubmit()">
+            <h2>Log In</h2>
+            <mat-error *ngIf="loginInvalid">
+              The username and password were not recognised
+            </mat-error>
+            <mat-form-field>
+              <input matInput placeholder="Email" formControlName="username" required>
+              <mat-error>
+                Please provide a valid email address
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" formControlName="password" required>
+              <mat-error>
+                Please provide a valid password
+              </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Login</button>
+            <button routerLink="/registration" color="primary" mat-raised-button>Registrat</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
     </div>
-    <br>
-
-    <div class="form-label-group">
-        <label for="inputEmailOrMobile">Email or Mobile<sup
-                style="color: red; font-size: small; font-weight: bold;">*</sup></label>
-        <input type="text" id="inputEmailOrMobile" class="form-control" placeholder="enter Email address or Mobile" required autofocus>
-    </div>
-    <br>
-
-    <div class="form-label-group">
-        <label for="inputPassword">Password<sup style="color: red; font-size: small; font-weight: bold;">*</sup></label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <h3 class="disp-inline">
-            <a class="signinForgetPass" href="/en/Account/ResetPassword">Forgot Your Password?</a>
-        </h3>
-    </div>
-    <br>
-
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" value="remember-me"> Remember me
-        </label>
-    </div>
-
-    
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-<br>
+  </div>
 
 
-    <div class="col-xs-10 col-xs-offset-1">
-        <div class="form-group textCenter" style="text-align: center;">
-
-            <label id="signInLabel" class="grey666 fs-16">New User ?
-                <a class="boldtext bluetext red-borderbottom fs-14" href="/en/Account/SignUp?fromVoffer=False">Sign Up</a>
-            </label>
-        </div>
-    </div>
-
-
-</form> -->
+  <div class="col-1 m-0">
+  </div>
+  <div class="col-6 m-0">
+    <img src="../../../assets/images/fixRegisterPageImage.jpg" style="width: 100%; height: 100%;">
+  </div>

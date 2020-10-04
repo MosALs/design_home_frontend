@@ -14,10 +14,12 @@ import { t_register } from 'src/app/core/models/tforms/RegisterationForm';
 })
 export class RegistrationComponent implements OnInit {
 
-  foods = ['Steak', 'Pizza', 'Tacos'];
-  areas = ['haram', 'tanta', 'alx'];
-  specialization = ['نجار', 'سباك', 'كهربائى'];
-  userGenderapp = ['ذكر', 'انثى'];
+  foods= ['Steak','Pizza','Tacos' ];
+  areas= ['haram','tanta','alx' ];
+  specialization= ['نجار','سباك','كهربائى' ];
+  userGenderapp= ['Male','Female' ];
+  
+  accountType:AccountTypes= new AccountTypes();
 
   accountType: AccountTypes = new AccountTypes();
 
