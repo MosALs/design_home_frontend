@@ -21,7 +21,6 @@ export class RegistrationComponent implements OnInit {
   
   accountType:AccountTypes= new AccountTypes();
 
-  accountType: AccountTypes = new AccountTypes();
 
   TotalRow: number;
 
