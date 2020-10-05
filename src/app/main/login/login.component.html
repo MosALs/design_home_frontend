@@ -1,10 +1,8 @@
 ﻿<div class="row m-0">
-  <div class="col-1 m-0">
-  </div>
-  <div class="col-4 m-0">
+  <div class="col-4 m-0 p-5">
     <div class="row">
       <!-- Reactive driven forms -->
-      <mat-card class="col-12">
+      <mat-card class="col-12 text-center">
         <mat-card-content>
           <form [(formGroup)]="formA" (ngSubmit)="onSubmit()">
             <h2>Log In</h2>
@@ -24,16 +22,13 @@
               </mat-error>
             </mat-form-field>
             <button mat-raised-button color="primary">Login</button>
-            <button routerLink="/registration" color="primary" mat-raised-button>Registrat</button>
           </form>
         </mat-card-content>
       </mat-card>
     </div>
+    <div class="row">
+      <h6 class="text-dark-gray pr-2" style="font-size: 15px;">create a new account?</h6>
+      <button mat-button routerLink="/registration" color="primary">sign up</button>
+    </div>
   </div>
-
-
-  <div class="col-1 m-0">
-  </div>
-  <div class="col-6 m-0">
-    <img src="../../../assets/images/fixRegisterPageImage.jpg" style="width: 100%; height: 100%;">
-  </div>
+</div>

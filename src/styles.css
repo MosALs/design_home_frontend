@@ -5,6 +5,8 @@
 
 @import '~ngx-toastr\toastr.css';
 
+
+
 body{
     padding-top: 50px;
 }
@@ -12,7 +14,33 @@ div{
     margin-top: 1px;
     margin-bottom: 1px;
 }
+.login-background-img{
 
+}
+.register-background-img{
+    background-image: url('src\assets\images\registerBackGroundImg.jpg');
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 10px;
+    background-attachment: fixed;
+    /* background-size: cover; */
+    background-size: 100% 100%;
+    opacity: 0.3;
+
+}
+
+.theme-color-black{
+    color: #000000;
+}
+.theme-color-dark-gray{
+    color: #343a40;
+}
+.theme-color-light-gray{
+    color: #b3b3b3;
+}
+.theme-color-yellow{
+    color: #ffd11a;
+}
 .text-dark-gray{
     color : #6c757d;
 }
