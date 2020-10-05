@@ -21,8 +21,6 @@ export class RegistrationComponent implements OnInit {
   
   accountType:AccountTypes= new AccountTypes();
 
-  accountType: AccountTypes = new AccountTypes();
-
   TotalRow: number;
 
   private _userRegisterationDto: UserRegisterationDto = new UserRegisterationDto();
@@ -141,8 +139,6 @@ export class RegistrationComponent implements OnInit {
     //    name:['',Validators.required]
 
     //  });
-
->>>>>>> 6887f1b27e2ead0e275f61239b1311e8fcb32ae4
   }
 
 
