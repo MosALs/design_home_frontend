@@ -1,4 +1,6 @@
-﻿<div class="row m-0">
+﻿<div class="row m-0 login-background-img">
+  <div class="col-4 m-0 p-5">
+  </div>
   <div class="col-4 m-0 p-5">
     <div class="row">
       <!-- Reactive driven forms -->
@@ -21,14 +23,14 @@
                 Please provide a valid password
               </mat-error>
             </mat-form-field>
-            <button mat-raised-button color="primary">Login</button>
+            <button class="btn-dark-gray-text-white" mat-raised-button>Login</button>
           </form>
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="row">
-      <h6 class="text-dark-gray pr-2" style="font-size: 15px;">create a new account?</h6>
-      <button mat-button routerLink="/registration" color="primary">sign up</button>
+    <div class="row pl-5 mt-2">
+      <h6 class="theme-color-light-gray pl-4 pr-2 pt-1" style="font-size: 15px;">Create New Account?</h6>
+      <button class="pl-0 pt-0 theme-color-yellow" mat-button routerLink="/registration">sign up</button>
     </div>
   </div>
 </div>

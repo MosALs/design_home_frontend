@@ -16,3 +16,16 @@
     color: rgba(0, 0, 0, 0.54);
     padding-left: 13px;
   }
+
+  .register-background-img{
+    padding: 0;
+    margin: 0;
+    background-image: url('src\assets\images\registerBackGroundImg.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    /* opacity: 0.3; */
+
+}

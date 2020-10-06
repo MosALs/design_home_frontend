@@ -4,8 +4,6 @@
 @import '~bootstrap\dist\css\bootstrap.css';
 
 
-
-
 body{
     padding-top: 50px;
 }
@@ -13,20 +11,8 @@ div{
     margin-top: 1px;
     margin-bottom: 1px;
 }
-.login-background-img{
 
-}
-.register-background-img{
-    background-image: url('src\assets\images\registerBackGroundImg.jpg');
-    background-repeat: no-repeat;
-    width: 100px;
-    height: 10px;
-    background-attachment: fixed;
-    /* background-size: cover; */
-    background-size: 100% 100%;
-    opacity: 0.3;
-
-}
+/* Theme colors */
 
 .theme-color-black{
     color: #000000;
@@ -40,8 +26,24 @@ div{
 .theme-color-yellow{
     color: #ffd11a;
 }
+.theme-color-red{
+    color:#b30000;
+}
+
+/* Text Colors */
+
 .text-dark-gray{
     color : #6c757d;
+}
+
+/* BTN Colors */
+.btn-red-text-white{
+    background-color: #b30000;
+    color: #ffffff;
+}
+.btn-dark-gray-text-white{
+    background-color: #6c757d;
+    color: #ffffff;
 }
 
 
