@@ -21,6 +21,7 @@ export class RegistrationComponent implements OnInit {
   
   accountType:AccountTypes= new AccountTypes();
 
+
   TotalRow: number;
 
   private _userRegisterationDto: UserRegisterationDto = new UserRegisterationDto();
