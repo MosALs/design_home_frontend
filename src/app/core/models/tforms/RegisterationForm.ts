@@ -24,10 +24,11 @@ export class t_register {
 
         const registerForm: FormGroup = this._fb.group({
 
-            username: new FormControl('', [Validators.email, Validators.required]),
+            email: new FormControl('', [Validators.email, Validators.required]),
             password: new FormControl('', [Validators.required, Validators.maxLength(8)]),
             mobile: new FormControl('', [Validators.required, Validators.minLength(11)]),
-            name: new FormControl('', [Validators.required]),
+            firstName: new FormControl('', [Validators.required]),
+            lastName: new FormControl('', [Validators.required]),
             userGenderapp: new FormControl('', [Validators.required]),
             locationName: new FormControl('', Validators.required),
             userHours: new FormControl('', Validators.required),

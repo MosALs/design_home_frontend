@@ -31,7 +31,7 @@
                                                 formControlName="lastName" required>
 
                                             <mat-error>
-                                                Please provide last name
+                                                Please provide your last name
                                             </mat-error>
                                         </mat-form-field>
                                     </div>
@@ -63,9 +63,9 @@
                                     <div class="col-6">
                                         <mat-form-field>
                                             <input matInput placeholder="Email" class="form-control"
-                                                formControlName="username" required>
+                                                formControlName="email" required>
                                             <mat-error>
-                                                Please provide a email
+                                                Please provide an email
                                             </mat-error>
                                         </mat-form-field>
                                     </div>
@@ -83,31 +83,43 @@
                                     <div class="col-4">
                                         <mat-form-field>
                                             <mat-label>Country</mat-label>
-                                            <mat-select>
+                                            <mat-select formControlName="country" required>
                                                 <mat-option *ngFor="let food of foods">
                                                     {{food}}
                                                 </mat-option>
                                             </mat-select>
+                                            <mat-error
+                                                *ngIf="registerForm.controls['country'].hasError('required') && registerForm.controls['country'].pristine">
+                                                Please choose a country
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col-4">
                                         <mat-form-field>
                                             <mat-label>Governorate</mat-label>
-                                            <mat-select>
+                                            <mat-select formControlName="governorate" required>
                                                 <mat-option *ngFor="let food of foods">
                                                     {{food}}
                                                 </mat-option>
                                             </mat-select>
+                                            <mat-error
+                                                *ngIf="registerForm.controls['governorate'].hasError('required') && registerForm.controls['governorate'].pristine">
+                                                Please choose a governorate
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
                                     <div class="col-4">
                                         <mat-form-field>
                                             <mat-label>Area</mat-label>
-                                            <mat-select>
+                                            <mat-select formControlName="area" required>
                                                 <mat-option *ngFor="let area of areas">
                                                     {{area}}
                                                 </mat-option>
                                             </mat-select>
+                                            <mat-error
+                                                *ngIf="registerForm.controls['area'].hasError('required') && registerForm.controls['area'].pristine">
+                                                Please choose a area
+                                            </mat-error>
                                         </mat-form-field>
                                     </div>
                                 </div>
@@ -116,45 +128,76 @@
                                         <input matInput type="locationName" placeholder="Enter your exact location"
                                             class="form-control" formControlName="locationName" required>
                                         <mat-error>
-                                            Please provide a locationName
+                                            Please provide a location
                                         </mat-error>
                                     </mat-form-field>
                                 </div>
-
-
+                                <br>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <div class="btn-group">
-                                                <div class="btn btn-dark" (click)="accountType.client = !accountType.client;accountType.handworker = false;
+                                            <div class="row">
+                                                <div class="col-1">
+                                                </div>
+                                                <!-- <div class="col-4 btn btn-dark-gray-text-white btn-account-type px-0"
+                                                (click)="accountType.client = !accountType.client;accountType.handworker = false;
+                                                accountType.shop = false;accountType.company = false"> -->
+                                                <div class="col-4 btn btn-dark-gray-text-white btn-account-type px-0"
+                                                (click)="btnLookingForServices()">
+                                                    Looking for Services
+                                                </div>
+                                                <div class="col-1 px-2 pt-1 text-account-type">
+                                                    OR
+                                                </div>
+                                                <!-- <div class="col-5 btn btn-dark-gray-text-white btn-account-type px-0"
+                                                (click)="accountType.client = false"> -->
+                                                <div class="col-5 btn btn-dark-gray-text-white btn-account-type px-0"
+                                                (click)="btnNeedJobOrSaleProducts()">
+                                                Need Job/ Sale Products
+                                                </div>
+                                                <div class="col-1">
+                                                </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="container" *ngIf="needJobOrSaleProducts">
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <div class="row btn-group">
+                                                <!-- <div class="btn btn-dark" (click)="accountType.client = !accountType.client;accountType.handworker = false;
                                             ;accountType.shop = false;accountType.company = false">
                                                     عميل
-
-                                                </div>
-                                                <div class="btn btn-dark" (click)="accountType.handworker = !accountType.handworker;accountType.client = false;
+                                                </div> -->
+                                                <div class="col-5 btn btn-dark" (click)="accountType.handworker = !accountType.handworker;accountType.client = false;
                                             ;accountType.shop = false;accountType.company = false">
-                                                    صنايعى
+                                                    Handworker
                                                 </div>
-                                                <div class="btn btn-dark" (click)="accountType.shop = !accountType.shop;accountType.client = false;
+                                                <div class="col-3 btn btn-dark" (click)="accountType.shop = !accountType.shop;accountType.client = false;
                                         accountType.handworker = false;accountType.company = false">
-                                                    محل
+                                                    Shop
                                                 </div>
-                                                <div class="btn btn-dark" (click)="accountType.company = !accountType.company;accountType.client = false;
+                                                <div class="col-4 btn btn-dark" (click)="accountType.company = !accountType.company;accountType.client = false;
                                         accountType.shop = false;accountType.handworker = false">
-                                                    شركه
+                                                    Company
                                                 </div>
-                                                <div class="btn btn-dark"
+
+                                                <button type="button" mdbBtn color="vk" class="waves-light" mdbWavesEffect><i class="fab fa-vk left"></i>Vkontakte</button>
+
+                                                <!-- <div class="btn btn-dark"
                                                     (click)="accountType.company = !accountType.company;accountType.client = false;accountType.next = false">
                                                     درش
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
+
                                 <div class="row">
                                     <!--عميل-->
-                                    <div *ngIf="accountType.client"> عميل</div>
+                                    <!-- <div *ngIf="accountType.client"> عميل</div> -->
                                     <!--صنايعى-->
                                     <div *ngIf="accountType.handworker">
                                         <mat-label>اختار التخصص</mat-label>
@@ -319,9 +362,11 @@
                                         Current week dataشركه
                                     </div>
                                 </div>
-                                <div class="text-center">
-                                    <button mat-raised-button type="submit"
-                                    class="btn-dark-gray-text-white center" >Register</button>
+                                <div class="text-center mt-2">
+                                    <button mat-raised-button *ngIf="!activateRegisterBtn" type="submit"
+                                        class="btn-red-text-white center" disabled>Register</button>
+                                    <button mat-raised-button *ngIf="activateRegisterBtn" type="submit"
+                                        class="btn-red-text-white center">Register</button>
                                     <mat-error *ngIf="registerInValid">
                                         The username and password and mobile were not recognised
                                     </mat-error>
@@ -609,5 +654,5 @@
 
             </div>
 
+        </div>
     </div>
-</div>

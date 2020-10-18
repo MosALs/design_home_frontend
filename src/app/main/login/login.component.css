@@ -66,3 +66,6 @@ box-shadow: none !important;
   background-size: cover;
   /* opacity: 0.3; */
 }
+::ng-deep .mat-form-field-required-marker {
+  color: red
+}

@@ -2,6 +2,7 @@
 
 
 @import '~bootstrap\dist\css\bootstrap.css';
+@import 'font-awesome/css/font-awesome.min.css';
 
 
 body{
@@ -11,6 +12,7 @@ div{
     margin-top: 1px;
     margin-bottom: 1px;
 }
+
 
 /* Theme colors */
 
@@ -43,6 +45,14 @@ div{
 }
 .btn-dark-gray-text-white{
     background-color: #6c757d;
+    color: #ffffff;
+}
+.btn-light-gray-text-white{
+    background-color: #b3b3b3;
+    color: #ffffff;
+}
+.btn-yellow-text-white{
+    background-color: #ffd11a;
     color: #ffffff;
 }
 
