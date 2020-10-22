@@ -7,3 +7,6 @@ export const  UserEnitiyURLS={
     ADD_USER_URL:"",
     DELETE_USER_URL:""
 }
+export const ShopEntityURLS={
+    
+}

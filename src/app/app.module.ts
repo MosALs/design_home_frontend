@@ -16,12 +16,12 @@ import { RegisterFacadeService } from './facade/register-facade.service';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
+
   ],
   imports: [
     AppRoutingModule,
