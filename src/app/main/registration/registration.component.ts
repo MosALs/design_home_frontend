@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2 } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserRegisterationDto } from 'src/app/core/models/dto/Userregisterationdto';
@@ -47,7 +47,8 @@ export class RegistrationComponent implements OnInit {
     private router: Router,
     private _registerFacadeService: RegisterFacadeService,
 
-    private register: t_register
+    private register: t_register,
+    private renderer2: Renderer2
   ) {
 
     this.accountType.client = true;
