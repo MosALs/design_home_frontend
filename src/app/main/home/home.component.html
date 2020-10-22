@@ -3,41 +3,6 @@
     <h1>
         Welcome to {{ title }}!
     </h1>
-    <form novalidate [formGroup]="FormGroup">
-        <div class="row">
-            <div class="container">
-                <div class="col-xs-12 form-group">
-                    <div style="margin-top:0px; margin:40px; " formGroupName="itemRows">
-                        <ng-container *ngIf="FormGroup.controls.itemRows!=null">
-                            <div *ngFor="let itemrow of FormGroup.controls.itemRows.controls; let i = index" [formGroupName]="i">
-                                <div class="row">
-                                    <div class="col-md-2 form-group">
-                                        <input matInput placeholder="Name" formControlName="Name">
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input matInput placeholder="RollNo" formControlName="RollNo">
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input matInput placeholder="Class" formControlName="Class">
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <input matInput placeholder="MobileNo" formControlName="MobileNo">
-                                    </div>
-                                    <div class="col-md-2 form-group">
-                                        <button (click)="deleteRow(i)" class="btn btn-danger">X</button>
-                                    </div>
-                                </div>
-                            </div>
 
-                        </ng-container>
-
-                        <div class="form-group" style="text-align:right">
-                            <button type="button" (click)="addNewRow()" [disabled]="FormGroup.invalid" class="btn btn-primary">Add New Row</button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </form>
+    <mainsearchnavbar></mainsearchnavbar>
 </div>
