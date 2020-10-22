@@ -29,3 +29,20 @@
     /* opacity: 0.3; */
 
 }
+
+::ng-deep .mat-form-field-required-marker {
+  color: red
+}
+
+.btn-red-text-white:focus {
+  outline: none;
+}
+
+.btn-account-type{
+  font-size: 0.8rem;
+}
+.text-account-type{
+  font-size: 1rem;
+}
+
+

@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 import { CustomFormsModule } from 'ng2-validation';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { ButtonsModule, CollapseModule, WavesModule } from 'angular-bootstrap-md';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,12 @@ import { ToastrModule } from 'ngx-toastr';
   MatOptionModule,
   MatSidenavModule,
   MatListModule,
-  ToastrModule.forRoot()
+  ToastrModule.forRoot(),
+  ButtonsModule,
+  WavesModule,
+  CollapseModule,
+  MDBBootstrapModule.forRoot(),
+
 
   ],
   exports :[
