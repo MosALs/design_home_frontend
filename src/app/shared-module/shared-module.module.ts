@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -16,16 +16,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { RouterModule } from '@angular/router';
 import { CustomFormsModule } from 'ng2-validation';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ButtonsModule, CollapseModule, WavesModule } from 'angular-bootstrap-md';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { Ng2DropdownModule } from 'ng2-material-dropdown';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 
@@ -40,58 +40,57 @@ import { Ng2DropdownModule } from 'ng2-material-dropdown';
     MatIconModule,
     RouterModule,
     FormsModule,
-     CustomFormsModule,
-     MatToolbarModule,
-     MatToolbarModule,
-  MatMenuModule,
-  MatIconModule,
-  MatButtonModule,
-  MatTableModule,
-  MatDividerModule,
-  MatProgressSpinnerModule,
-  MatInputModule,
-  MatCardModule,
-  MatSlideToggleModule,
-  MatSelectModule,
-  MatFormFieldModule,
-  MatOptionModule,
-  MatSidenavModule,
-  MatListModule,
-  ToastrModule.forRoot(),
-  ButtonsModule,
-  WavesModule,
-  CollapseModule,
-  MDBBootstrapModule.forRoot(),
-  FontAwesomeModule,
-  AngularFontAwesomeModule,
-  Ng2DropdownModule,
+    CustomFormsModule,
+    MatToolbarModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTableModule,
+    MatDividerModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatCardModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSidenavModule,
+    MatListModule,
+    ToastrModule.forRoot(),
+    ButtonsModule,
+    WavesModule,
+    CollapseModule,
+    MDBBootstrapModule.forRoot(),
+    AngularFontAwesomeModule,
+    Ng2DropdownModule,
+    NgImageSliderModule
 
   ],
-  exports :[
+  exports: [
     ReactiveFormsModule,
     CommonModule,
     MatButtonModule,
     MatIconModule,
     RouterModule,
     FormsModule,
-     CustomFormsModule,
-     MatToolbarModule,
-  MatMenuModule,
-  MatIconModule,
-  MatButtonModule,
-  MatTableModule,
-  MatDividerModule,
-  MatProgressSpinnerModule,
-  MatInputModule,
-  MatCardModule,
-  MatSlideToggleModule,
-  MatSelectModule,
-  MatLabel,
-  MatFormFieldModule,
-  MatOptionModule,
-  HttpClientModule,
+    CustomFormsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTableModule,
+    MatDividerModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatCardModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatLabel,
+    MatFormFieldModule,
+    MatOptionModule,
+    HttpClientModule,
   ]
 
 })
 export class SharedModuleModule { }
- 

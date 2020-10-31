@@ -26,7 +26,6 @@
             "styles": [
               "src/custom-theme.scss",
               "src/styles.css"
-
             ],
             "scripts": []
           },
@@ -94,7 +93,7 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "../node_modules/font-awesome/css/font-awesome.css"
-                       ],
+            ],
             "scripts": []
           }
         },
@@ -126,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "kmgn"
+  "defaultProject": "kmgn",
+  "cli": {
+    "analytics": "29d4aecc-592b-4751-98eb-e1f7ebf0a4c7"
+  }
 }

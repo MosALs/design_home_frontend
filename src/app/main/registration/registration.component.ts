@@ -41,7 +41,6 @@ export class RegistrationComponent implements OnInit {
 
 
 
-
   constructor(
     private _fb: FormBuilder,
     private router: Router,
@@ -50,8 +49,8 @@ export class RegistrationComponent implements OnInit {
     private register: t_register,
     private renderer2: Renderer2
   ) {
-
     this.accountType.client = true;
+    
     this.accountType.company = false;
     this.accountType.handworker = false;
     this.accountType.shop = false;

@@ -1,10 +1,11 @@
+<form [(formGroup)]="searchForm">
 <div class="row border border-dark searchnavbar">
     <div class="col-2  border-right border-dark">
         <mat-form-field>
             <mat-label>Country</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let countrys of country">
-                    {{countrys}}
+            <mat-select formControlName="Fcountry">
+                <mat-option  *ngFor="let country of countries">
+                    {{country}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
@@ -12,7 +13,7 @@
     <div class="col-2 border-right border-dark">
         <mat-form-field>
             <mat-label>Governorate</mat-label>
-            <mat-select>
+            <mat-select formControlName="Fgovernorate" >
                 <mat-option *ngFor="let governorate of governorates">
                     {{governorate}}
                 </mat-option>
@@ -22,7 +23,7 @@
     <div class="col-2 border-right border-dark">
         <mat-form-field>
             <mat-label>Area</mat-label>
-            <mat-select>
+            <mat-select  formControlName="Farea">
                 <mat-option *ngFor="let area of areas">
                     {{area}}
                 </mat-option>
@@ -31,27 +32,29 @@
     </div>
     <div class="col-2 border-right border-dark">
         <mat-form-field>
-            <mat-label>AccountTypes</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let accountType of accountTypes">
-                    {{accountType}}
+            <mat-label>Specialization</mat-label>
+            <mat-select  formControlName="Fspecializations">
+                <mat-option *ngFor="let specialization of specializations">
+                    {{specialization}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
     <div class="col-2 ">
         <mat-form-field>
-            <mat-label>Specialization</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let specializations of specialization">
-                    {{specializations}}
+            <mat-label>AccountTypes</mat-label>
+            <mat-select formControlName="FaccountType">
+                <mat-option *ngFor="let accountType of accountTypes">
+                    {{accountType}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
     </div>
+  
     <!-- <button type="button" class="btn btn-danger">Danger</button>-->
     <button class="search">Search </button>
 </div>
+</form>
 
 <!------------------------------------------------------------------------------------->
 
@@ -69,14 +72,33 @@
                     <div class="col-5 pl-5">
                         <mat-card-title class="row text-left">Fahmy Tarek Aly</mat-card-title>
                         <mat-card-subtitle class="row text-left">Carpenter</mat-card-subtitle>
+
                     </div>
 
                     <div class="col-4">
                         <h1>fffffffff</h1>
+                        <app-media-slider></app-media-slider>
                     </div>
                 </div>
+                
             </mat-card-content>
         </mat-card>
     </div>
 </div>
 
+<!-- 
+<div class="row">
+<div class="col" ngIf="!governorate">{{governorate}} :</div>
+<div class="col" ngIf="!area">{{area}} :</div>
+<div class="col">location</div>
+</div>
+
+ts
+private governorate=null;
+private area=null; 
+
+[cards]
+handworkerSearchResultCard
+shopSearchResultCard
+companySearchResultCard
+-->

@@ -29,7 +29,7 @@ export class t_register {
             mobile: new FormControl('', [Validators.required, Validators.minLength(11)]),
             firstName: new FormControl('', [Validators.required]),
             lastName: new FormControl('', [Validators.required]),
-            userGenderapp: new FormControl('', [Validators.required]),
+            userGender: new FormControl('', [Validators.required]),
             locationName: new FormControl('', Validators.required),
             userHours: new FormControl('', Validators.required),
             deliveryNoDelivery: new FormControl('', Validators.required),
