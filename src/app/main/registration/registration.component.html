@@ -7,9 +7,9 @@
             </div>
 
 
-            <div class="col-4 m-0">
+            <div class="col-5 m-0">
                 <div class="row mt-3">
-                    <mat-card class="col-12 pt-2">
+                    <mat-card class="col-12 pt-2 px-15">
                         <mat-card-content>
                             <form [(formGroup)]="registerForm" (ngSubmit)="onSubmit(accountType)">
 
@@ -17,7 +17,7 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <mat-form-field>
-                                            <input matInput placeholder="First Name" class="form-control"
+                                            <input matInput placeholder="First Name"
                                                 formControlName="firstName" required>
 
                                             <mat-error>
@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="col-4">
                                         <mat-form-field>
-                                            <input matInput placeholder="Last Name" class="form-control"
+                                            <input matInput placeholder="Last Name"
                                                 formControlName="lastName" required>
 
                                             <mat-error>
@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="col-4">
                                         <mat-form-field>
-                                            <input matInput type="mobile" placeholder="Mobile" class="form-control"
+                                            <input matInput type="mobile" placeholder="Mobile"
                                                 formControlName="mobile" required>
                                             <mat-error>
                                                 Please provide a mobile
@@ -45,24 +45,22 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
-                                <div class="row text-dark-gray pt-3">
-                                    <label class="col-6">Gender</label>
-                                    <div class="col-6">
-                                        <div class="row form-check">
-                                            <input class="form-check-input" type="radio" name="femaleRadio" value="true"
-                                                checked="checked">
-                                            <label class="form-check-label" for="gridRadios1">female</label>
-                                        </div>
-                                        <div class="row form-check">
-                                            <input class="form-check-input" type="radio" name="maleRadio" value="false">
-                                            <label class="form-check-label pl-1" for="gridRadios2">male</label>
-                                        </div>
+                                <div class="row text-dark-gray">
+                                    <label class="col-2">Gender :</label>
+                                    <div class="col-2 form-check">
+                                        <input class="form-check-input" type="radio" name="femaleRadio" value="option1"
+                                            checked="checked">
+                                        <label class="form-check-label" for="gridRadios1">female</label>
+                                    </div>
+                                    <div class="col-2 form-check">
+                                        <input class="form-check-input" type="radio" name="maleRadio" value="option2">
+                                        <label class="form-check-label" for="gridRadios2">male</label>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row pt-0">
                                     <div class="col-6">
                                         <mat-form-field>
-                                            <input matInput placeholder="Email" class="form-control"
+                                            <input matInput placeholder="Email" 
                                                 formControlName="email" required>
                                             <mat-error>
                                                 Please provide an email
@@ -71,7 +69,7 @@
                                     </div>
                                     <div class="col-6">
                                         <mat-form-field>
-                                            <input matInput type="password" placeholder="Password" class="form-control"
+                                            <input matInput type="password" placeholder="Password"
                                                 formControlName="password" required>
                                             <mat-error>
                                                 Please provide a password
@@ -123,10 +121,11 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
+
                                 <div class="row">
                                     <mat-form-field class="col-12">
                                         <input matInput type="locationName" placeholder="Enter your exact location"
-                                            class="form-control" formControlName="locationName" required>
+                                            formControlName="locationName">
                                         <mat-error>
                                             Please provide a location
                                         </mat-error>
@@ -143,7 +142,7 @@
                                                 (click)="accountType.client = !accountType.client;accountType.handworker = false;
                                                 accountType.shop = false;accountType.company = false"> -->
                                                 <div class="col-4 btn btn-dark-gray-text-white btn-account-type px-0"
-                                                (click)="btnLookingForServices()">
+                                                    (click)="btnLookingForServices()">
                                                     Looking for Services
                                                 </div>
                                                 <div class="col-1 px-2 pt-1 text-account-type">
@@ -152,12 +151,12 @@
                                                 <!-- <div class="col-5 btn btn-dark-gray-text-white btn-account-type px-0"
                                                 (click)="accountType.client = false"> -->
                                                 <div class="col-5 btn btn-dark-gray-text-white btn-account-type px-0"
-                                                (click)="btnNeedJobOrSaleProducts()">
-                                                Need Job/ Sale Products
+                                                    (click)="btnNeedJobOrSaleProducts()">
+                                                    Need Job/ Sale Products
                                                 </div>
                                                 <div class="col-1">
                                                 </div>
-                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -166,27 +165,33 @@
                                 <div class="container" *ngIf="needJobOrSaleProducts">
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <div class="row btn-group">
+                                            <div class="row">
                                                 <!-- <div class="btn btn-dark" (click)="accountType.client = !accountType.client;accountType.handworker = false;
                                             ;accountType.shop = false;accountType.company = false">
                                                     عميل
                                                 </div> -->
-                                                <div class="col-5 btn btn-dark" (click)="accountType.handworker = !accountType.handworker;accountType.client = false;
-                                            ;accountType.shop = false;accountType.company = false">
-                                                    Handworker
-                                                </div>
-                                                <div class="col-3 btn btn-dark" (click)="accountType.shop = !accountType.shop;accountType.client = false;
-                                        accountType.handworker = false;accountType.company = false">
-                                                    Shop
-                                                </div>
-                                                <div class="col-4 btn btn-dark" (click)="accountType.company = !accountType.company;accountType.client = false;
-                                        accountType.shop = false;accountType.handworker = false">
-                                                    Company
-                                                </div>
+                                                <div class="col"></div>
+
+                                                <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="accountType.handworker = !accountType.handworker;accountType.client = false;
+                                                ;accountType.shop = false;accountType.company = false">
+                                                    Handworker</button>
+
+                                                <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="accountType.shop = !accountType.shop;accountType.client = false;
+                                                accountType.handworker = false;accountType.company = false">
+                                                    Shop</button>
+
+
+                                                <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="accountType.company = !accountType.company;accountType.client = false;
+                                                accountType.shop = false;accountType.handworker = false">
+                                                    Company</button>
+
+                                                <div class="col"></div>
+
 
                                                 <div class="col-md-12">
                                                     <i class="fas fa-store-alt"></i>
-                                                </div>                                                <!-- <div class="btn btn-dark"
+                                                </div>
+                                                <!-- <div class="btn btn-dark"
                                                     (click)="accountType.company = !accountType.company;accountType.client = false;accountType.next = false">
                                                     درش
                                                 </div> -->
@@ -196,22 +201,33 @@
                                 </div>
 
                                 <div class="row">
-                                    <!--عميل-->
-                                    <!-- <div *ngIf="accountType.client"> عميل</div> -->
-                                    <!--صنايعى-->
-                                    <div *ngIf="accountType.handworker">
-                                        <mat-label>اختار التخصص</mat-label>
-                                        <mat-form-field>
-                                            <mat-label>Favorite food</mat-label>
-                                            <mat-select>
-                                                <mat-option *ngFor="let specializationname of specialization">
-                                                    {{specializationname}}
-                                                </mat-option>
-                                            </mat-select>
-                                        </mat-form-field>
-
-
+                                    <div class="col-12">
+                                        <div *ngIf="accountType.handworker" class="row py-2">
+                                            <div class="col-12">
+                                                <div class="row my-1">
+                                                    <mat-label class="col-4 pt-3">What is your specialty?</mat-label>
+                                                    <mat-form-field class="col-6 m-0">
+                                                        <mat-label>Specializations</mat-label>
+                                                        <mat-select>
+                                                            <mat-option *ngFor="let specializationname of specialization">
+                                                                {{specializationname}}
+                                                            </mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="row my-1">
+                                                    <mat-label class="col-4 m-0 px-0 pt-1">Your working days :</mat-label>
+                                                    <mat-radio-group class="col-8 m-0 p-0">
+                                                        <div class="row">
+                                                            <mat-radio-button class="col-5 m-0 p-0" value="workEveryDay">Working every day</mat-radio-button>
+                                                            <mat-radio-button class="col-5 m-0 p-0" value="specificDays">Work on specific days</mat-radio-button>
+                                                        </div>
+                                                      </mat-radio-group> 
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
                                     <!--محل-->
                                     <div *ngIf="accountType.shop">
 
@@ -362,6 +378,7 @@
                                         Current week dataشركه
                                     </div>
                                 </div>
+
                                 <div class="text-center mt-2">
                                     <button mat-raised-button *ngIf="!activateRegisterBtn" type="submit"
                                         class="btn-red-text-white center" disabled>Register</button>
@@ -655,4 +672,46 @@
             </div>
 
         </div>
+
+        <div class="row">
+            <h4>Choose a Country</h4>
+            <select [(ngModel)]="dropdownGovsOpt">
+                
+                <option [ngValue]="dropdownGov" *ngFor="let dropdownGov of dropdownGovs">
+                    {{dropdownGov.key}}
+                </option>
+            </select>
+            <h4>Choose a Gov</h4>
+            {{dropdownGov}}
+            {{dropdownAreasOpt}}
+            <select>
+                <option [value]="dropdownGov" *ngFor="let dropdownGov of dropdownGovsOpt?.value">
+                    {{dropdownGov}}
+                </option>
+            </select>
+            <h4>Choose an Area</h4>
+            <select>
+                <option [value]="dropdownArea" *ngFor="let dropdownArea of dropdownAreas">
+                    {{ dropdownGov.value }}
+                </option>
+            </select>
+        </div>
+
+        <!-- <div class="row">
+            <h4>Choose a Gov</h4>
+            <select [(ngModel)]="dropdownAreasOpt">
+                <option [ngValue]="dropdownArea" *ngFor="let dropdownArea of dropdownAreas">
+                    {{dropdownArea.key}}
+                </option>
+            </select>
+            <h4>Choose an Area</h4>
+            <select>
+                <option [value]="dropdownArea" *ngFor="let dropdownArea of dropdownAreasOpt?.value">
+                    {{ dropdownArea }}
+                </option>
+            </select>
+        </div> -->
+
+
+
     </div>

@@ -1,10 +1,8 @@
     mat-card {
       box-shadow: none !important;
+      padding: 5px 30px 5px !important; 
    } 
 
-   mat-form-field {
-    display: block;
-  }
   
   .genderControl label:first-child
   .genderControl label{color:#ef0f0f;line-height:34px}
@@ -30,9 +28,6 @@
 
 }
 
-::ng-deep .mat-form-field-required-marker {
-  color: red
-}
 
 .btn-red-text-white:focus {
   outline: none;
@@ -46,3 +41,17 @@
 }
 
 
+mat-form-field {
+  display: block !important;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick{ height: 36px; }
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { border-top: 5px solid transparent; }
+::ng-deep .mat-form-field-required-marker {color: red}
+
+.form-control{
+  height: 5px !important;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{border-color: #ffd11a !important;}
+.mat-radio-button.mat-accent .mat-radio-inner-circle{color: #ffd11a!important; background-color: #ffd11a!important;}
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {background-color: #ffd11a!important;}

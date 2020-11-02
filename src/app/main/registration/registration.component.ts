@@ -6,13 +6,41 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { RegisterFacadeService } from 'src/app/facade/register-facade.service';
 import { AccountTypes } from 'src/app/core/models/model/AccountTypes';
 import { t_register } from 'src/app/core/models/tforms/RegisterationForm';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+
 
 @Component({
   selector: 'registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  styleUrls: ['./registration.component.css'],
+  providers: [{
+  provide: MAT_RADIO_DEFAULT_OPTIONS,
+  useValue: { color: 'amber' },
+}]
 })
+
+
 export class RegistrationComponent implements OnInit {
+
+  public dropdownGovsOpt: string;
+  public dropdownAreasOpt: string;
+
+  public dropdownAreas = [
+    { key: "Cairo", value: ["Maadi","Nasr City","Shoubra","New Cairo","West el-Balad"] },
+    { key: "Giza", value: ["Dokki","Mohandeseen","Haram","Faisal","Agouza"] },
+    { key: "Alexandria", value: ["Roshdy","Smouha","Louran","Bahary","Cleopatra"] },
+    { key: "Fayoum", value: ["Ibsheway","el-Fayoum City"] },
+    { key: "Damietta", value: ["Damietta Elgedida","Damietta City"] }
+  ];
+  public dropdownGovs = [
+    {key: "Egypt", value: ["Cairo","Giza","Alexandria","Fayoum","Damietta"]},
+    {key: "Saudi Arabia", value: ["Riyadh","Jaddah","Dammam","Makkah","Medina"]},
+    {key: "Jordan", value: ["Amman","Zarqa"]},
+    {key: "Lebanon", value: ["Beirut","Metn","North","South","Keserwan"]}
+    ];
+
+
+
 
   foods = ['Steak', 'Pizza', 'Tacos'];
   areas = ['haram', 'tanta', 'alx'];
@@ -92,6 +120,8 @@ export class RegistrationComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log("dropdownAreas", this.dropdownAreas)
+
 
     console.log("no on init");
     // console.log("isNotClient1", this.isNotClient);
