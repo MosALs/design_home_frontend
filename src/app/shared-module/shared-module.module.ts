@@ -26,6 +26,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { Ng2DropdownModule } from 'ng2-material-dropdown';
 // import {NgImageSliderModule} from 'ng-image-slider';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 
@@ -64,7 +66,8 @@ import { Ng2DropdownModule } from 'ng2-material-dropdown';
     MDBBootstrapModule.forRoot(),
     AngularFontAwesomeModule,
     Ng2DropdownModule,
-    // NgImageSliderModule
+    // NgImageSliderModule,
+    MatCheckboxModule
 
   ],
   exports: [
@@ -90,7 +93,8 @@ import { Ng2DropdownModule } from 'ng2-material-dropdown';
     MatFormFieldModule,
     MatOptionModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule
   ]
 
 })

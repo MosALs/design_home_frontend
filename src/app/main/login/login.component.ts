@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
-
+  hide = true;
 
 
   constructor(
