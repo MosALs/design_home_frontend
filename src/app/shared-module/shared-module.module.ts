@@ -23,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ButtonsModule, CollapseModule, WavesModule } from 'angular-bootstrap-md';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { Ng2DropdownModule } from 'ng2-material-dropdown';
 // import {NgImageSliderModule} from 'ng-image-slider';
 
@@ -62,7 +62,7 @@ import { Ng2DropdownModule } from 'ng2-material-dropdown';
     WavesModule,
     CollapseModule,
     MDBBootstrapModule.forRoot(),
-    AngularFontAwesomeModule,
+    // AngularFontAwesomeModule,
     Ng2DropdownModule,
     // NgImageSliderModule
 
