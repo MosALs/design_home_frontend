@@ -27,7 +27,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { Ng2DropdownModule } from 'ng2-material-dropdown';
 // import {NgImageSliderModule} from 'ng-image-slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 
@@ -35,7 +36,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   declarations: [
   ],
   imports: [
-    ReactiveFormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     CommonModule,
     MatButtonModule,
     MatRadioModule,
@@ -67,8 +68,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AngularFontAwesomeModule,
     Ng2DropdownModule,
     // NgImageSliderModule,
-    MatCheckboxModule
-
+    MatCheckboxModule,
+    MatExpansionModule,
+    // NgxMaterialTimepickerModule.setLocale('ar-EG')  -> will use it for RTL
+    NgxMaterialTimepickerModule.setLocale('en-US')
   ],
   exports: [
     ReactiveFormsModule,
@@ -94,7 +97,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatOptionModule,
     HttpClientModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatExpansionModule,
+    NgxMaterialTimepickerModule
   ]
 
 })

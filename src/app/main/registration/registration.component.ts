@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserRegisterationDto } from 'src/app/core/models/dto/Userregisterationdto';
@@ -8,6 +8,9 @@ import { AccountTypes } from 'src/app/core/models/model/AccountTypes';
 import { t_register } from 'src/app/core/models/tforms/RegisterationForm';
 import { Observable } from 'rxjs';
 import { MatOptionSelectionChange } from '@angular/material/core';
+import {MatAccordion} from '@angular/material/expansion';
+
+
 
 
 @Component({
@@ -18,6 +21,23 @@ import { MatOptionSelectionChange } from '@angular/material/core';
 
 
 export class RegistrationComponent implements OnInit {
+
+
+  @ViewChild(MatAccordion) accordion: MatAccordion;
+  accordionCurrentStep = 0;
+
+  setStep(index: number) {
+    this.accordionCurrentStep = index;
+  }
+
+  nextStep() {
+    this.accordionCurrentStep++;
+  }
+
+  prevStep() {
+    this.accordionCurrentStep--;
+  }
+
 
   optionSelectionChanges: Observable<MatOptionSelectionChange>
 
@@ -77,10 +97,6 @@ export class RegistrationComponent implements OnInit {
   suitableGovernorateList: Governorate[] = [];
   suitableAreaList: Area[] = [];
 
-
-
-  foods = ['Steak', 'Pizza', 'Tacos'];
-  areas = ['haram', 'tanta', 'alx'];
   specialization = ['نجار', 'سباك', 'كهربائى'];
   userGenderapp = ['Male', 'Female'];
 
