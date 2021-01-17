@@ -1,0 +1,12 @@
+.profile-picture{
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* margin-right: -30px !important; */
+    /* z-index: 100; */
+    /* position:fixed; */
+}

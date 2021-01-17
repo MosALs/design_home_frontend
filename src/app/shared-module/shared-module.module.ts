@@ -32,6 +32,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 
+
+
 @NgModule({
   declarations: [
   ],
@@ -47,7 +49,6 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatToolbarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule,
     MatButtonModule,
     MatTableModule,
     MatDividerModule,
@@ -71,7 +72,8 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatCheckboxModule,
     MatExpansionModule,
     // NgxMaterialTimepickerModule.setLocale('ar-EG')  -> will use it for RTL
-    NgxMaterialTimepickerModule.setLocale('en-US')
+    NgxMaterialTimepickerModule.setLocale('en-US'),
+    HttpClientModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -83,7 +85,6 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     CustomFormsModule,
     MatToolbarModule,
     MatMenuModule,
-    MatIconModule,
     MatButtonModule,
     MatTableModule,
     MatDividerModule,
@@ -99,7 +100,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatRadioModule,
     MatCheckboxModule,
     MatExpansionModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
   ]
 
 })

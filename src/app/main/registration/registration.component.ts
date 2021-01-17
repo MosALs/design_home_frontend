@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserRegisterationDto } from 'src/app/core/models/dto/Userregisterationdto';
@@ -9,6 +9,8 @@ import { t_register } from 'src/app/core/models/tforms/RegisterationForm';
 import { Observable } from 'rxjs';
 import { MatOptionSelectionChange } from '@angular/material/core';
 import {MatAccordion} from '@angular/material/expansion';
+import { MatRadioChange } from '@angular/material/radio';
+import { IClient } from 'src/app/core/models/model/IClient';
 
 
 
@@ -21,6 +23,26 @@ import {MatAccordion} from '@angular/material/expansion';
 
 
 export class RegistrationComponent implements OnInit {
+
+  @Input() firstNameElement;
+  @Input() lastNameElement;
+  @Input() mobileElement;
+  @Input() emailElement;
+  @Input() passwordElement;
+  @Input() exactLocationElement;
+  @Input() regGenderRadio = '';
+  @Input() regCountry = '';
+  @Input() regGov = '';
+  @Input() regArea = '';
+  @Input() regAccountType = '';
+
+  
+  public regFirstName:string= '';
+  public regLastName:string= '';
+  public regMobile:string= '';
+  public regEmail:string= '';
+  public regPassword:string= '';
+  public regExactLocation:string= '';
 
 
   @ViewChild(MatAccordion) accordion: MatAccordion;
@@ -113,16 +135,46 @@ export class RegistrationComponent implements OnInit {
   private returnUrl: string;
   locationFormGroup1: FormGroup;
   // _toastr: any;
+  shopAndCompanyForm: FormGroup;
+
 
   // isNotClient: boolean = false;
 
-  private lookingForServices: boolean = false;
-  private needJobOrSaleProducts: boolean = false;
+
   private activateRegisterBtn: boolean = false;
   private SpecificDays: boolean = false;
   private everyDay: boolean = false;
   private SpecificDaysString: string;
   private daysOfTheWeek: string[] = ['Saturday', 'Sunday', 'Monday', 'Tuesday','Wednesday','Thursday','Friday'];
+  private working24hrs : boolean = false;
+  private workingDayTime : boolean = false;
+  private workingNightTime : boolean = false;
+  private wholesale : boolean = false;
+  private retail : boolean = false;
+  private bothWholesaleAndRetail : boolean = false;
+  private deliveryServiceIsAllowed : boolean = false;
+  private deliveryServiceNotAllowed : boolean = false;
+  private lookingForServiceButton: boolean = false;
+  private handworkerButton: boolean = false;
+  private TradeButton: boolean = false;
+
+
+  // public currentUser: IClient ={
+  //   id: '',
+  //   first_name: this.regFirstName,
+  //   last_name: this.regLastName,
+  //   mobile: this.regMobile,
+  //   gender: this.regGenderRadio,
+  //   email: this.regEmail,
+  //   password: this.regPassword,
+  //   country: this.regCountry,
+  //   gov: this.regGov,
+  //   area: this.regArea,
+  //   exact_loaction: this.regExactLocation,
+  //   account_type: this.regAccountType,
+  //   avatar: '',
+  // }
+
 
 
 
@@ -183,8 +235,6 @@ export class RegistrationComponent implements OnInit {
 
     this.registerForm = this.register.createRegisterForm();
 
-    console.log("registerationForm: ", this.registerForm);
-
     // this.locationFormGroup1 = this._fb.group({
     //   Name: [''],
     //   RollNo: [''],
@@ -220,6 +270,10 @@ export class RegistrationComponent implements OnInit {
       ])
     });
 
+
+
+
+
     // console.log(this.registerForm);
     // console.log(this.locationFormGroup);
     //   this.registerForm = this.fb.group({
@@ -235,53 +289,53 @@ export class RegistrationComponent implements OnInit {
 
 
 
-  async onSubmit(Object) {
+  // async onSubmit(Object) {
 
-    console.log(Object);
-    this.registerInValid = false;
-    this.formSubmitAttempt = false;
+  //   console.log(Object);
+  //   this.registerInValid = false;
+  //   this.formSubmitAttempt = false;
 
-    // if (this.registerForm.valid) {
-    try {
-      //   this._userRegisterationDto.appuser.name = this.registerForm.get('name').value;
-      //   this._userRegisterationDto.appuser.userName = this.registerForm.get('username').value;
-      //   this._userRegisterationDto.appuser.password = this.registerForm.get('password').value;
-      //   this._userRegisterationDto.appuser.userMobile = this.registerForm.get('mobile').value;
-      //  // this._userRegisterationDto.appuser.active = this.registerForm.get('active').value;
-      //   this._userRegisterationDto.areas.areaName=this.registerForm.get('areaName').value;
-      //   this._userRegisterationDto.location.locationName=this.registerForm.get('locationName').value;
-      //   this._userRegisterationDto.accountType.accountTypeName=this.registerForm.get('accountTypeName').value;
-      //   this._userRegisterationDto.specialization.specializationName=this.registerForm.get('specializationName').value;
-      this._registerFacadeService.register(this._userRegisterationDto, this.accountType).subscribe(
-        data => {
-          console.log("result after subscribe:", data);
-          // redirect to home page and get token 
-          // 1- save token in local storage.
-          // 2- redirect to home page.
-        }
-      )
-
-
+  //   // if (this.registerForm.valid) {
+  //   try {
+  //     //   this._userRegisterationDto.appuser.name = this.registerForm.get('name').value;
+  //     //   this._userRegisterationDto.appuser.userName = this.registerForm.get('username').value;
+  //     //   this._userRegisterationDto.appuser.password = this.registerForm.get('password').value;
+  //     //   this._userRegisterationDto.appuser.userMobile = this.registerForm.get('mobile').value;
+  //     //  // this._userRegisterationDto.appuser.active = this.registerForm.get('active').value;
+  //     //   this._userRegisterationDto.areas.areaName=this.registerForm.get('areaName').value;
+  //     //   this._userRegisterationDto.location.locationName=this.registerForm.get('locationName').value;
+  //     //   this._userRegisterationDto.accountType.accountTypeName=this.registerForm.get('accountTypeName').value;
+  //     //   this._userRegisterationDto.specialization.specializationName=this.registerForm.get('specializationName').value;
+  //     this._registerFacadeService.register(this._userRegisterationDto, this.accountType).subscribe(
+  //       data => {
+  //         console.log("result after subscribe:", data);
+  //         // redirect to home page and get token 
+  //         // 1- save token in local storage.
+  //         // 2- redirect to home page.
+  //       }
+  //     )
 
 
-      //     console.log('LoginComponent == onSubmit() ==  if (this.formA.valid) == try');
-      //    // await this._registerFacadeService.register(this._userRegisterationDto).subscribe((Date.toString){
 
-      //       await this._registerFacadeService.register(this._userRegisterationDto,this.accountType).subscribe(
-      //       (token: string) => {
-      //         console.log('LoginComponent == onSubmit() == token: ', token);
-      //       }
-      //     );
-    } catch (err) {
-      err: HttpErrorResponse;
-      // log()
-      this.registerInValid = true;
 
-    }
-    // } else {
-    //   this.formSubmitAttempt = true;
-    // }
-  }
+  //     //     console.log('LoginComponent == onSubmit() ==  if (this.formA.valid) == try');
+  //     //    // await this._registerFacadeService.register(this._userRegisterationDto).subscribe((Date.toString){
+
+  //     //       await this._registerFacadeService.register(this._userRegisterationDto,this.accountType).subscribe(
+  //     //       (token: string) => {
+  //     //         console.log('LoginComponent == onSubmit() == token: ', token);
+  //     //       }
+  //     //     );
+  //   } catch (err) {
+  //     err: HttpErrorResponse;
+  //     // log()
+  //     this.registerInValid = true;
+
+  //   }
+  //   // } else {
+  //   //   this.formSubmitAttempt = true;
+  //   // }
+  // }
 
   //   addRow(index) {  
   //     this.newDynamic = {title1: "", title2: "",title3:"",title4:"",title5:""};
@@ -340,30 +394,7 @@ export class RegistrationComponent implements OnInit {
     }
 
   }
-
-  // accountTypeIsNotClient(event) {
-  //   console.log("isNotClient2", this.isNotClient);
-  //   this.isNotClient = true;
-  //   console.log("isNotClient3", this.isNotClient);
-
-  // }
-
-  btnLookingForServices() {
-    this.accountType.client = !this.accountType.client;
-    this.accountType.handworker = false;
-    this.accountType.shop = false;
-    this.accountType.company = false;
-    this.needJobOrSaleProducts = false;
-    this.lookingForServices = true;
-    this.activateRegisterBtn = true;
-  }
-  btnNeedJobOrSaleProducts() {
-    this.accountType.client = false;
-    this.lookingForServices = false;
-    this.needJobOrSaleProducts = true;
-    this.activateRegisterBtn = false;
-  }
-
+  
   btnSpecificDays(){
     this.SpecificDays = true;
     this.everyDay = false;
@@ -372,11 +403,53 @@ export class RegistrationComponent implements OnInit {
     this.SpecificDays = false;
     this.everyDay = true;
   }
+  btnWorking24hrs(){
+    this.working24hrs = true;
+    this.workingDayTime = false;
+    this.workingNightTime = false;
+  }
+  btnWorkingDayTime(){
+    this.working24hrs = false;
+    this.workingDayTime = true;
+    this.workingNightTime = false;
+  }
+  btnWorkingNightTime(){
+    this.working24hrs = false;
+    this.workingDayTime = false;
+    this.workingNightTime = true;
+  }
+
+  btnWholesale(){
+    this.wholesale = true;
+    this.retail = false;
+    this.bothWholesaleAndRetail = false;
+  }
+  btnRetail(){
+    this.wholesale = false;
+    this.retail = true;
+    this.bothWholesaleAndRetail = false;
+  }
+  btnWholesaleAndRetail(){
+    this.wholesale = false;
+    this.retail = false;
+    this.bothWholesaleAndRetail = true;
+  }
+ 
+  btnDeliveryServiceIsAllowed(){
+    this.deliveryServiceIsAllowed = true;
+    this.deliveryServiceNotAllowed = false;
+  }
+  btnDeliveryServiceNotAllowed(){
+    this.deliveryServiceIsAllowed = false;
+    this.deliveryServiceNotAllowed = true;
+  }
 
   changeSelectedCountry(event: MatOptionSelectionChange, country: Country) {
     if (event.isUserInput) {
       // console.log("govenorateId:", govenorate.gid);
       this.suitableGovernorateList = this.govenoratesList.filter(g => g.cid == country.cid);
+      this.regCountry = event.source.value;
+      console.log("regCountry", this.regCountry);
     }
 
   }
@@ -384,8 +457,105 @@ export class RegistrationComponent implements OnInit {
     if (event.isUserInput) {
       // console.log("governorateId:", governorate.bid);
       this.suitableAreaList = this.areasList.filter(a => a.gid == governorate.gid);
+      this.regGov = event.source.value;
+      console.log("regGov", this.regGov);
+    }   
+  }
+
+  changeSelectedArea(event: MatOptionSelectionChange){
+    this.regArea = event.source.value;
+    console.log("regArea", this.regArea);
+  }
+
+  shopSubform(shop){
+    shop=this.accountType.shop;
+    if(this.accountType.shop){
+      this.shopAndCompanyForm = this.register.createRegisterForm();
+
     }
   }
+
+  addTradeMobile(i){
+    // this.mobileIndex[i]++;
+        // for(let i=0; i<this.mobileIndex.length; i++){
+      // this.mobileIndex.push(i);
+    // }
+  }
+  removeTradeMobile(i){
+    // this.mobileIndex[i]--;
+  }
+
+
+  lookingForServiceRadioButton(){
+    this.lookingForServiceButton = true;
+    this.handworkerButton = false;
+    this.TradeButton = false;
+    this.accountType.client = !this.accountType.client;
+    this.accountType.handworker = false;
+    this.accountType.shop = false;
+    this.accountType.company = false;
+    this.activateRegisterBtn = true;
+  }
+  handworkerRadioButton(){
+    this.lookingForServiceButton = false;
+    this.handworkerButton = true;
+    this.TradeButton = false;
+    this.accountType.client = false;
+    this.accountType.handworker = true;
+    this.accountType.shop = false;
+    this.accountType.company = false;
+    this.activateRegisterBtn = true;
+  }
+  TradeRadioButton(){
+    this.lookingForServiceButton = false;
+    this.handworkerButton = false;
+    this.TradeButton = true;
+    this.accountType.client = false;
+    this.accountType.handworker = false;
+    this.accountType.shop = true;
+    this.accountType.company = true;
+    this.activateRegisterBtn = true;
+  }
+
+
+  onFirstNameChange($event){
+    this.regFirstName =  $event.target.value;
+    console.log("regFirstName", this.regFirstName)
+  }
+  onLastNameChange($event){
+    this.regLastName =  $event.target.value;
+    console.log("regLastName", this.regLastName)
+  }
+  onMobileChange($event){
+    this.regMobile =  $event.target.value;
+    console.log("regMobile", this.regMobile)
+  }
+  onEmailChange($event){
+    this.regEmail =  $event.target.value;
+    console.log("regEmail", this.regEmail)
+  }
+  onPasswordChange($event){
+    this.regPassword =  $event.target.value;
+    console.log("regPassword", this.regPassword)
+  }
+  onExactLocationChange($event){
+    this.regExactLocation =  $event.target.value;
+    console.log("regExactLocation", this.regExactLocation)
+  }
+  genderRadioChange(event: MatRadioChange){
+    this.regGenderRadio =  event.value;
+    console.log("regGenderRadio", this.regGenderRadio)
+  }
+  accountTypeRadioChange(event: MatRadioChange){
+    this.regAccountType = event.value;
+    console.log("regAccountType", this.regAccountType)
+  }
+
+
+  // public submitRegistrationForm(){
+  //   console.log(this.currentUser);
+  // }
+
 }
 
   export interface Country {

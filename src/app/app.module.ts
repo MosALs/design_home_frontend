@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { BackEndFacadeService } from './facade/back-end-facade.service';
 import { AuthFacadeService } from './facade/auth-facade.service';
 import { RegisterFacadeService } from './facade/register-facade.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -22,7 +23,8 @@ import { RegisterFacadeService } from './facade/register-facade.service';
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    
 
   ],
   imports: [
@@ -32,7 +34,7 @@ import { RegisterFacadeService } from './facade/register-facade.service';
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
-     
+    HttpClientModule
   ],
 
 
