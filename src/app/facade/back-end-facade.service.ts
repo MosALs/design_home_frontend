@@ -22,7 +22,7 @@ export class BackEndFacadeService {
 
   
 
-  public postRegistrationService(): RegistrationService {
+  public getRegistrationService(): RegistrationService {
 
     if (!this._registrationService) {
       this._registrationService = this.injector.get(RegistrationService);

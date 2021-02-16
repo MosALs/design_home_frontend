@@ -3,6 +3,7 @@ import { UserRegisterationDto } from '../core/models/dto/Userregisterationdto';
 import { BackEndFacadeService } from './back-end-facade.service';
 import { Observable } from 'rxjs';
 import { AccountTypes } from '../core/models/model/AccountTypes';
+import { IClient } from '../core/models/model/IClient';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class RegisterFacadeService {
   constructor(private _backEndFacadService: BackEndFacadeService) { }
   
   checkRegisterAppUser(name:string,username:string,password:string,usermobile:string):String{
-    return this._backEndFacadService.postRegistrationService().checkRegisterAppUser(name,username,password,usermobile); 
+    return this._backEndFacadService.getRegistrationService().checkRegisterAppUser(name,username,password,usermobile); 
 
  }
 
@@ -34,7 +35,13 @@ export class RegisterFacadeService {
     if(accountType.shop){
       console.log("shop == ", accountType.shop);
     }
-    return this._backEndFacadService.postRegistrationService().register(_userRegisterationDto);
+    return this._backEndFacadService.getRegistrationService().register(_userRegisterationDto);
   }
   
+
+     
+  newRegister(iclient: IClient):Observable<object>{
+    return this._backEndFacadService.getRegistrationService().newServerRegister(iclient);
+
+  }
 }

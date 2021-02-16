@@ -27,4 +27,5 @@ export class AuthFacadeService {
     this._authenticationRequest.password = password;
     return this._backEndFacadService.getAuthenticationService().authenticate(this._authenticationRequest);
   }
+
 }

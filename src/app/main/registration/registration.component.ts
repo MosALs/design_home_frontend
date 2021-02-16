@@ -8,7 +8,7 @@ import { AccountTypes } from 'src/app/core/models/model/AccountTypes';
 import { t_register } from 'src/app/core/models/tforms/RegisterationForm';
 import { Observable } from 'rxjs';
 import { MatOptionSelectionChange } from '@angular/material/core';
-import {MatAccordion} from '@angular/material/expansion';
+import { MatAccordion } from '@angular/material/expansion';
 import { MatRadioChange } from '@angular/material/radio';
 import { IClient } from 'src/app/core/models/model/IClient';
 
@@ -36,13 +36,13 @@ export class RegistrationComponent implements OnInit {
   @Input() regArea = '';
   @Input() regAccountType = '';
 
-  
-  public regFirstName:string= '';
-  public regLastName:string= '';
-  public regMobile:string= '';
-  public regEmail:string= '';
-  public regPassword:string= '';
-  public regExactLocation:string= '';
+
+  public regFirstName: string = '';
+  public regLastName: string = '';
+  public regMobile: string = '';
+  public regEmail: string = '';
+  public regPassword: string = '';
+  public regExactLocation: string = '';
 
 
   @ViewChild(MatAccordion) accordion: MatAccordion;
@@ -145,15 +145,15 @@ export class RegistrationComponent implements OnInit {
   private SpecificDays: boolean = false;
   private everyDay: boolean = false;
   private SpecificDaysString: string;
-  private daysOfTheWeek: string[] = ['Saturday', 'Sunday', 'Monday', 'Tuesday','Wednesday','Thursday','Friday'];
-  private working24hrs : boolean = false;
-  private workingDayTime : boolean = false;
-  private workingNightTime : boolean = false;
-  private wholesale : boolean = false;
-  private retail : boolean = false;
-  private bothWholesaleAndRetail : boolean = false;
-  private deliveryServiceIsAllowed : boolean = false;
-  private deliveryServiceNotAllowed : boolean = false;
+  private daysOfTheWeek: string[] = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  private working24hrs: boolean = false;
+  private workingDayTime: boolean = false;
+  private workingNightTime: boolean = false;
+  private wholesale: boolean = false;
+  private retail: boolean = false;
+  private bothWholesaleAndRetail: boolean = false;
+  private deliveryServiceIsAllowed: boolean = false;
+  private deliveryServiceNotAllowed: boolean = false;
   private lookingForServiceButton: boolean = false;
   private handworkerButton: boolean = false;
   private TradeButton: boolean = false;
@@ -283,7 +283,7 @@ export class RegistrationComponent implements OnInit {
     //    name:['',Validators.required]
 
     //  });
-    
+
   }
 
 
@@ -394,52 +394,52 @@ export class RegistrationComponent implements OnInit {
     }
 
   }
-  
-  btnSpecificDays(){
+
+  btnSpecificDays() {
     this.SpecificDays = true;
     this.everyDay = false;
   }
-  btnEveryDay(){
+  btnEveryDay() {
     this.SpecificDays = false;
     this.everyDay = true;
   }
-  btnWorking24hrs(){
+  btnWorking24hrs() {
     this.working24hrs = true;
     this.workingDayTime = false;
     this.workingNightTime = false;
   }
-  btnWorkingDayTime(){
+  btnWorkingDayTime() {
     this.working24hrs = false;
     this.workingDayTime = true;
     this.workingNightTime = false;
   }
-  btnWorkingNightTime(){
+  btnWorkingNightTime() {
     this.working24hrs = false;
     this.workingDayTime = false;
     this.workingNightTime = true;
   }
 
-  btnWholesale(){
+  btnWholesale() {
     this.wholesale = true;
     this.retail = false;
     this.bothWholesaleAndRetail = false;
   }
-  btnRetail(){
+  btnRetail() {
     this.wholesale = false;
     this.retail = true;
     this.bothWholesaleAndRetail = false;
   }
-  btnWholesaleAndRetail(){
+  btnWholesaleAndRetail() {
     this.wholesale = false;
     this.retail = false;
     this.bothWholesaleAndRetail = true;
   }
- 
-  btnDeliveryServiceIsAllowed(){
+
+  btnDeliveryServiceIsAllowed() {
     this.deliveryServiceIsAllowed = true;
     this.deliveryServiceNotAllowed = false;
   }
-  btnDeliveryServiceNotAllowed(){
+  btnDeliveryServiceNotAllowed() {
     this.deliveryServiceIsAllowed = false;
     this.deliveryServiceNotAllowed = true;
   }
@@ -459,34 +459,34 @@ export class RegistrationComponent implements OnInit {
       this.suitableAreaList = this.areasList.filter(a => a.gid == governorate.gid);
       this.regGov = event.source.value;
       console.log("regGov", this.regGov);
-    }   
+    }
   }
 
-  changeSelectedArea(event: MatOptionSelectionChange){
+  changeSelectedArea(event: MatOptionSelectionChange) {
     this.regArea = event.source.value;
     console.log("regArea", this.regArea);
   }
 
-  shopSubform(shop){
-    shop=this.accountType.shop;
-    if(this.accountType.shop){
+  shopSubform(shop) {
+    shop = this.accountType.shop;
+    if (this.accountType.shop) {
       this.shopAndCompanyForm = this.register.createRegisterForm();
 
     }
   }
 
-  addTradeMobile(i){
+  addTradeMobile(i) {
     // this.mobileIndex[i]++;
-        // for(let i=0; i<this.mobileIndex.length; i++){
-      // this.mobileIndex.push(i);
+    // for(let i=0; i<this.mobileIndex.length; i++){
+    // this.mobileIndex.push(i);
     // }
   }
-  removeTradeMobile(i){
+  removeTradeMobile(i) {
     // this.mobileIndex[i]--;
   }
 
 
-  lookingForServiceRadioButton(){
+  lookingForServiceRadioButton() {
     this.lookingForServiceButton = true;
     this.handworkerButton = false;
     this.TradeButton = false;
@@ -496,7 +496,7 @@ export class RegistrationComponent implements OnInit {
     this.accountType.company = false;
     this.activateRegisterBtn = true;
   }
-  handworkerRadioButton(){
+  handworkerRadioButton() {
     this.lookingForServiceButton = false;
     this.handworkerButton = true;
     this.TradeButton = false;
@@ -506,7 +506,7 @@ export class RegistrationComponent implements OnInit {
     this.accountType.company = false;
     this.activateRegisterBtn = true;
   }
-  TradeRadioButton(){
+  TradeRadioButton() {
     this.lookingForServiceButton = false;
     this.handworkerButton = false;
     this.TradeButton = true;
@@ -518,35 +518,35 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-  onFirstNameChange($event){
-    this.regFirstName =  $event.target.value;
+  onFirstNameChange($event) {
+    this.regFirstName = $event.target.value;
     console.log("regFirstName", this.regFirstName)
   }
-  onLastNameChange($event){
-    this.regLastName =  $event.target.value;
+  onLastNameChange($event) {
+    this.regLastName = $event.target.value;
     console.log("regLastName", this.regLastName)
   }
-  onMobileChange($event){
-    this.regMobile =  $event.target.value;
+  onMobileChange($event) {
+    this.regMobile = $event.target.value;
     console.log("regMobile", this.regMobile)
   }
-  onEmailChange($event){
-    this.regEmail =  $event.target.value;
+  onEmailChange($event) {
+    this.regEmail = $event.target.value;
     console.log("regEmail", this.regEmail)
   }
-  onPasswordChange($event){
-    this.regPassword =  $event.target.value;
+  onPasswordChange($event) {
+    this.regPassword = $event.target.value;
     console.log("regPassword", this.regPassword)
   }
-  onExactLocationChange($event){
-    this.regExactLocation =  $event.target.value;
+  onExactLocationChange($event) {
+    this.regExactLocation = $event.target.value;
     console.log("regExactLocation", this.regExactLocation)
   }
-  genderRadioChange(event: MatRadioChange){
-    this.regGenderRadio =  event.value;
+  genderRadioChange(event: MatRadioChange) {
+    this.regGenderRadio = event.value;
     console.log("regGenderRadio", this.regGenderRadio)
   }
-  accountTypeRadioChange(event: MatRadioChange){
+  accountTypeRadioChange(event: MatRadioChange) {
     this.regAccountType = event.value;
     console.log("regAccountType", this.regAccountType)
   }
@@ -556,18 +556,30 @@ export class RegistrationComponent implements OnInit {
   //   console.log(this.currentUser);
   // }
 
+  iclient: IClient;
+
+  public submitRegistrationForm() {
+    console.log("submitRegistrationForm ======= ");
+    console.log("form value : ", this.registerForm.value);
+    //  this.iclient.first_name = this.registerForm.controls.firstName.value
+
+    // this._registerFacadeService.newRegister(this.registerForm.value as IClient);
+    
+    
+  }
+
 }
 
-  export interface Country {
-   cid: number;
-   name: string;
-  }
+export interface Country {
+  cid: number;
+  name: string;
+}
 
-  export interface Governorate {
-    gid: number;
-    name: string;
-    cid: number;
-  }
+export interface Governorate {
+  gid: number;
+  name: string;
+  cid: number;
+}
 
 export interface Area {
   aid: number;

@@ -28,7 +28,7 @@ import { Ng2DropdownModule } from 'ng2-material-dropdown';
 // import {NgImageSliderModule} from 'ng-image-slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+// import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 
@@ -72,7 +72,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatCheckboxModule,
     MatExpansionModule,
     // NgxMaterialTimepickerModule.setLocale('ar-EG')  -> will use it for RTL
-    NgxMaterialTimepickerModule.setLocale('en-US'),
+    // NgxMaterialTimepickerModule.setLocale('en-US'),
     HttpClientModule,
   ],
   exports: [
@@ -100,7 +100,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     MatRadioModule,
     MatCheckboxModule,
     MatExpansionModule,
-    NgxMaterialTimepickerModule,
+    // NgxMaterialTimepickerModule,
   ]
 
 })
