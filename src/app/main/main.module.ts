@@ -9,6 +9,7 @@ import { AuthenticationService } from '../core/services/authentication.service';
 import { ProfileComponent } from './profile/profile.component';
 import { MainsearchnavbarComponent } from '../mainsearchnavbar/mainsearchnavbar.component';
 import { MediaSliderComponent } from '../media-slider/media-slider.component';
+import { RegComponent } from './reg/reg.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MediaSliderComponent } from '../media-slider/media-slider.component';
     RegistrationComponent,
     ProfileComponent,
     MainsearchnavbarComponent,
-    MediaSliderComponent
+    MediaSliderComponent,
+    RegComponent
     
   ],
 

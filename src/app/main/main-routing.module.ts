@@ -7,6 +7,7 @@ import { UIPagesUrls } from '../constants/UI_URLs';
 import { ProfileComponent } from './profile/profile.component';
 import { MainsearchnavbarComponent } from '../mainsearchnavbar/mainsearchnavbar.component';
 import { MediaSliderComponent } from '../media-slider/media-slider.component';
+import { RegComponent } from './reg/reg.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:UIPagesUrls.LOGIN_PAGE_URL,component:LoginComponent},
   {path:UIPagesUrls.PROFILE_PAGE_URL,component:ProfileComponent},
   {path:UIPagesUrls.MAINSEARCHNAVBAR_PAGE_URL,component:MainsearchnavbarComponent},
-  {path:UIPagesUrls.MEDIASLIDER_PAGE_URL,component:MediaSliderComponent}
+  {path:UIPagesUrls.MEDIASLIDER_PAGE_URL,component:MediaSliderComponent},
+  {path:UIPagesUrls.REG_PAGE_URL, component: RegComponent}
 
 ];
 
