@@ -12,6 +12,7 @@ import { BackEndFacadeService } from './facade/back-end-facade.service';
 import { AuthFacadeService } from './facade/auth-facade.service';
 import { RegisterFacadeService } from './facade/register-facade.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
 
 

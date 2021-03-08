@@ -6,6 +6,8 @@ export const UIPagesUrls = {
     PROFILE_PAGE_URL:"profile",
     MAINSEARCHNAVBAR_PAGE_URL:"mainsearchnavbar",
     MEDIASLIDER_PAGE_URL:"MediaSlider",
-    REG_PAGE_URL: "reg"
+    REG_PAGE_URL: "reg",
+    ACCOUNT_TYPE_ENTRANCE_PAGE_URL: "accountTypeEntrance",
+    LOGIN_FORM_PAGE_URL: "loginForm"
 
 };

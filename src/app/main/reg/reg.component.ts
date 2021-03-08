@@ -10,6 +10,7 @@ import { AbstractControl, FormGroup, SelectControlValueAccessor, ValidatorFn } f
 @Injectable({
   providedIn: 'root'
 })
+
 export class RegComponent implements OnInit {
 
   model = new IForm (
@@ -130,7 +131,7 @@ export class RegComponent implements OnInit {
 
   changeSelectedCountry(event, country: Country) {
     if (event) {
-      // this.suitableGovernorateList = this.govenoratesList.filter(g => g.cid == country.cid);
+      this.suitableGovernorateList = this.govenoratesList.filter(g => g.cid == country.cid);
       console.log("hello");
     }
   }
@@ -149,7 +150,29 @@ export class RegComponent implements OnInit {
   //   console.log("regArea", this.regArea);
   // }
 
+  
+
 }
+
+export function MustMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+          // return if another validator has already found an error on the matchingControl
+          return;
+      }
+
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ mustMatch: true });
+      } else {
+          matchingControl.setErrors(null);
+      }
+  };
+}
+
 
 export class IForm{
   constructor(

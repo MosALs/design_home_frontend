@@ -10,6 +10,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { MainsearchnavbarComponent } from '../mainsearchnavbar/mainsearchnavbar.component';
 import { MediaSliderComponent } from '../media-slider/media-slider.component';
 import { RegComponent } from './reg/reg.component';
+import { AccountTypeEntranceComponent } from './account-type-entrance/account-type-entrance.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { RegComponent } from './reg/reg.component';
     ProfileComponent,
     MainsearchnavbarComponent,
     MediaSliderComponent,
-    RegComponent
+    RegComponent,
+    AccountTypeEntranceComponent,
+    LoginFormComponent
     
   ],
 

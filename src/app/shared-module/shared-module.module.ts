@@ -29,6 +29,8 @@ import { Ng2DropdownModule } from 'ng2-material-dropdown';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
 // import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { ValidateEqualModule } from 'ng-validate-equal';
+
 
 
 
@@ -74,6 +76,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     // NgxMaterialTimepickerModule.setLocale('ar-EG')  -> will use it for RTL
     // NgxMaterialTimepickerModule.setLocale('en-US'),
     HttpClientModule,
+    ValidateEqualModule
   ],
   exports: [
     ReactiveFormsModule,
