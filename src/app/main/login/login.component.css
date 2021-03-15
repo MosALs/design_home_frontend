@@ -1,10 +1,42 @@
 mat-card {
 box-shadow: none !important;
+background-color:rgb(34, 32, 32);
+}
+
+form {
+  position: relative;
 }
   
   mat-form-field {
     display: block;
+    padding-bottom: 30px;
   }
+  mat-form-field::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background:  #ffd11a;
+    width: 90%;
+    left: 30%;
+    transform: translateX(-20%);
+  }
+  ::ng-deep .mat-form-field-infix {
+    margin-left: 7px;
+  }
+  ::ng-deep .mat-form-field-required-marker {
+    color: red
+  }
+  ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 2px;
+  }
+.mat-error{
+  font-size: medium !important;
+  padding-top: 17px;
+  padding-left: 20px;
+  padding-right: 0px;
+}
+  
+
 
   .form-signin {
     width: 100%;
@@ -13,26 +45,6 @@ box-shadow: none !important;
     margin: auto;
   }
 
-.form-label-group input::-webkit-input-placeholder {
-    color: transparent;
-  }
-  
-.form-label-group input:-ms-input-placeholder {
-    color: transparent;
-  }
-  
-.form-label-group input::-ms-input-placeholder {
-    color: transparent;
-  }
-  
-.form-label-group input::-moz-placeholder {
-    color: transparent;
-  }
-  
-.form-label-group input::placeholder {
-    color: transparent;
-  }
-  
 .form-label-group input:not(:placeholder-shown) {
   padding-top: 1.25rem;
   padding-bottom: .25rem;
@@ -45,17 +57,7 @@ box-shadow: none !important;
   color: #777;
 }
 
-.disp-inline{display:inline}
-.disp-block{display:block}
-.disp-inlineBlock{display:inline-block}
-.disp-inline-flex{display:inline-flex}
-.signinForgetPass{color:#0070cd!important;font-size:12px;line-height:32px;margin:0 4px}
-.pull-right{padding-right:15px;padding-left:0;text-align:right}
-#signInLabel a{position:relative;bottom:4px;border-bottom-width:2px; margin:0 0 0 12px}
-#signInLabel{font-weight:600}
-.form-group{margin-bottom:15px;width:calc(100% - 55px)}
-
-.login-background-img{
+/* .login-background-img{
   padding: 0;
   margin: 0;
   background-image: url('src\assets\images\loginBackgroundImg.jpg');
@@ -64,8 +66,73 @@ box-shadow: none !important;
   height: 100vh;
   background-attachment: fixed;
   background-size: cover;
+} */
+.login-background{
+  padding: 0;
+  margin: 0;
+  background-color: rgb(34, 32, 32);
+  width: 100%;
+  height: 100vh;
   /* opacity: 0.3; */
 }
-::ng-deep .mat-form-field-required-marker {
-  color: red
+
+
+
+.login-box{
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
 }
+h2{
+  float: left;
+  font-size: 40px;
+  border-bottom: 5px solid #ffd11a;
+  margin-bottom: 40px;
+  padding: 10px 0;
+  color: #ffffff;
+}
+
+.btn{
+  width: 100%;
+  background: none;
+  border: 2px solid #ffd11a;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 12px 0;
+}
+
+i{
+  color: aliceblue !important;
+}
+mat-icon{
+  color: aliceblue;
+}
+
+/*>>>>>   INPUT  <<<<<*/
+input{
+  color: aliceblue;
+  background-color: rgb(34, 32, 32);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+  box-shadow: 0 0 0 50px rgb(34, 32, 32) inset;
+  -webkit-text-fill-color: aliceblue;
+} 
+::placeholder {
+  color: #777;
+  opacity: 1; /* Firefox */
+}
+
+
+
+
+
+

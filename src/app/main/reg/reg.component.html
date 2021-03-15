@@ -1,6 +1,7 @@
 <div class="row p-3">
     <div class="col-5">
-        <form #registrationForm="ngForm" name="form" (ngSubmit)="registrationForm.form.valid && onSubmit()" novalidate>
+        <form #registrationForm="ngForm" name="form" (ngSubmit)="registrationForm.form.valid && onSubmit()"
+        [mustMatch]="['password', 'confirmPassword']" novalidate>
             <p class="form-instructions">Please enter the following information to create your account:</p>
             <div class="row">
                 <div class="col-6">
@@ -61,7 +62,7 @@
                         <input type="password" class="form-control" id="password" required minlength="8"
                             placeholder="at least 8 characters" [(ngModel)]="model.password" name="password"
                             #password="ngModel"
-                            [ngClass]="{ 'is-invalid': registrationForm.submitted && password.invalid }" >
+                            [ngClass]="{ 'is-invalid': registrationForm.submitted && password.invalid }">
                         <div *ngIf="registrationForm.submitted && password.invalid" class="invalid-feedback">
                             <div *ngIf="password.errors.required">Password is required</div>
                             <div *ngIf="password.errors.minlength">Password must be at least 8 characters</div>
@@ -74,10 +75,12 @@
                         <input type="password" class="form-control" id="confirmPassword" required minlength="8"
                             [(ngModel)]="model.confirmPassword" name="confirmPassword" #confirmPassword="ngModel"
                             [ngClass]="{ 'is-invalid': registrationForm.submitted && confirmPassword.invalid}">
-                            <!-- [ngClass]="{ 'is-invalid': registrationForm.submitted && confirmPassword.invalid }"> -->
+                        <!-- [ngClass]="{ 'is-invalid': registrationForm.submitted && confirmPassword.invalid }"> -->
                         <div *ngIf="registrationForm.submitted && confirmPassword.invalid" class="invalid-feedback">
                             <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
-                            <div *ngIf="!confirmPassword.errors.mustMatch">Confirm Password must match the Password</div>
+                            <div *ngIf="confirmPassword.errors.mustMatch">Confirm Password must match the Password
+                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -103,7 +106,7 @@
                 <div class="col-4">
                     <label for="country">Country</label>
                     <select class="form-control" id="country" required [(ngModel)]="model.country" name="country"
-                        (ngModelChange)="changeSelectedCountry($event, country)">
+                        (ngModelChange)="changeSelectedCountry($event)">
                         <option [value]="country.name" *ngFor="let country of countryList">
                             {{country.name}}
                         </option>
@@ -111,11 +114,12 @@
                 </div>
                 <div class="col-4">
                     <label for="gov">Governorate</label>
-                    <select class="form-control" id="gov" required [(ngModel)]="model.gov" name="gov"></select>
-                    <option [value]="governorate.name" *ngFor="let governorate of suitableGovernorateList"
-                        (onSelectionChange)="changeSelectedGovernorate($event,governorate)">
-                        {{governorate.name}}
-                    </option>
+                    <select class="form-control" id="gov" required [(ngModel)]="model.gov" name="gov">
+                        <option [value]="governorate.name" *ngFor="let governorate of suitableGovernorateList"
+                            (onSelectionChange)="changeSelectedGovernorate($event,governorate)">
+                            {{governorate.name}}
+                        </option>
+                    </select>
                 </div>
                 <div class="col-4">
                     <label for="area">Area</label>

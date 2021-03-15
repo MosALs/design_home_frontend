@@ -13,20 +13,7 @@ import { AbstractControl, FormGroup, SelectControlValueAccessor, ValidatorFn } f
 
 export class RegComponent implements OnInit {
 
-  model = new IForm (
-    8,
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '');
+  model = new UserProfile ();
   submitted = false;
 
 
@@ -129,10 +116,12 @@ export class RegComponent implements OnInit {
   // }
 
 
-  changeSelectedCountry(event, country: Country) {
+  changeSelectedCountry(event:string) {
+    console.log("changeSelectedCountry");
     if (event) {
-      this.suitableGovernorateList = this.govenoratesList.filter(g => g.cid == country.cid);
-      console.log("hello");
+      let country: Country[] = this.countryList.filter(c => c.name == event);
+      let coun = country[0];
+      this.suitableGovernorateList = this.govenoratesList.filter(g => g.cid == coun.cid);
     }
   }
 
@@ -154,49 +143,46 @@ export class RegComponent implements OnInit {
 
 }
 
-export function MustMatch(controlName: string, matchingControlName: string) {
-  return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
 
-      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
-          // return if another validator has already found an error on the matchingControl
-          return;
-      }
-
-      // set error on matchingControl if validation fails
-      if (control.value !== matchingControl.value) {
-          matchingControl.setErrors({ mustMatch: true });
-      } else {
-          matchingControl.setErrors(null);
-      }
-  };
+export interface RegisterModel{
+   username: string;
+   email: string;
+   password: string;
+   confirmPassword: string;
+   firstName: string;
+   lastName: string;
+   mobile: string;
+   gender: string;
+   country: Country;
+   gov: Governorate;
+   area: Area;
+   accountType: string;
 }
 
 
-export class IForm{
-  constructor(
-    public id: number,
-    public username: string,
-    public email: string,
-    public password: string,
-    public confirmPassword: string,
-    public firstName: string,
-    public lastName: string,
-    public mobile: string,
-    public gender: string,
-    public country: string,
-    public gov: string,
-    public area: string,
-    public accountType: string,
-    public address?: string,
-    public userAvatar?: string,
-    public trade?: ITrade,
-  ){}
+export class UserProfile{
+  public id: number;
+  public username: string;
+  public email: string;
+  public password: string;
+  public confirmPassword: string;
+  public firstName: string;
+  public lastName: string;
+  public mobile: string;
+  public gender: string;
+  public country: Country;
+  public gov: Governorate;
+  public area: Area;
+  public accountType: string;
+  public address?: string;
+  public userAvatar?: string;
+  public trade?: ITrade;
+  constructor(){}
 }
 
 export class ITrade{
   constructor(
+    public tradeId: number,
     public tradeName: string,
     public tradeMobileNumber: string,
     public gov: string,
@@ -224,4 +210,29 @@ export interface Area {
   aid: number;
   name: string;
   gid: number;
+}
+
+// custom validator to check that two fields match
+export function MustMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+
+      // return null if controls haven't initialised yet
+      if (!control || !matchingControl) {
+        return null;
+      }
+
+      // return null if another validator has already found an error on the matchingControl
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+          return null;
+      }
+
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ mustMatch: true });
+      } else {
+          matchingControl.setErrors(null);
+      }
+  }
 }

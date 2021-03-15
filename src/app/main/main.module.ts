@@ -11,7 +11,7 @@ import { MainsearchnavbarComponent } from '../mainsearchnavbar/mainsearchnavbar.
 import { MediaSliderComponent } from '../media-slider/media-slider.component';
 import { RegComponent } from './reg/reg.component';
 import { AccountTypeEntranceComponent } from './account-type-entrance/account-type-entrance.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { MustMatchDirective } from './reg/MustMatchDirective';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     MediaSliderComponent,
     RegComponent,
     AccountTypeEntranceComponent,
-    LoginFormComponent
+    MustMatchDirective
+
     
   ],
 

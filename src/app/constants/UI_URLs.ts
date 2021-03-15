@@ -8,6 +8,4 @@ export const UIPagesUrls = {
     MEDIASLIDER_PAGE_URL:"MediaSlider",
     REG_PAGE_URL: "reg",
     ACCOUNT_TYPE_ENTRANCE_PAGE_URL: "accountTypeEntrance",
-    LOGIN_FORM_PAGE_URL: "loginForm"
-
 };

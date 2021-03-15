@@ -9,7 +9,6 @@ import { MainsearchnavbarComponent } from '../mainsearchnavbar/mainsearchnavbar.
 import { MediaSliderComponent } from '../media-slider/media-slider.component';
 import { RegComponent } from './reg/reg.component';
 import { AccountTypeEntranceComponent } from './account-type-entrance/account-type-entrance.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 
 
 const routes: Routes = [
@@ -21,7 +20,6 @@ const routes: Routes = [
   {path:UIPagesUrls.MEDIASLIDER_PAGE_URL,component:MediaSliderComponent},
   {path:UIPagesUrls.REG_PAGE_URL, component: RegComponent},
   {path: UIPagesUrls.ACCOUNT_TYPE_ENTRANCE_PAGE_URL, component: AccountTypeEntranceComponent},
-  {path: UIPagesUrls.LOGIN_FORM_PAGE_URL, component: LoginFormComponent}
 
 ];
 
