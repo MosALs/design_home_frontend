@@ -1,172 +1,389 @@
-<div class="row p-3">
-    <div class="col-5">
+<div class="row p-5 regisrtation-background">
+    <div class="col-8 regisrtation-form">
         <form #registrationForm="ngForm" name="form" (ngSubmit)="registrationForm.form.valid && onSubmit()"
-        [mustMatch]="['password', 'confirmPassword']" novalidate>
-            <p class="form-instructions">Please enter the following information to create your account:</p>
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group required">
+            [mustMatch]="['password', 'confirmPassword']" novalidate class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="form-group col-12">
+                        <p class="form-instructions">Please enter the following information to join us:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group required col-6">
                         <label class="control-label" for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" required minlength="3" maxlength="20"
                             [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel"
                             [ngClass]="{ 'is-invalid': registrationForm.submitted && firstName.invalid }">
-                        <div *ngIf="registrationForm.submitted && firstName.invalid" class="invalid-feedback">
+                        <div *ngIf="registrationForm.submitted && firstName.invalid" class="required-input-error-msg">
                             <div *ngIf="firstName.errors.required">First Name is required</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group required">
+                    <div class="form-group required col-6">
                         <label class="control-label" for="lastName">Last Name</label>
                         <input type="text" class="form-control" id="lastName" required minlength="3" maxlength="20"
                             [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel"
                             [ngClass]="{ 'is-invalid': registrationForm.submitted && lastName.invalid }">
-                        <div *ngIf="registrationForm.submitted && lastName.invalid" class="invalid-feedback">
+                        <div *ngIf="registrationForm.submitted && lastName.invalid" class="required-input-error-msg">
                             <div *ngIf="lastName.errors.required">Last Name is required</div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group required">
+                <div class="row">
+                    <div class="form-group col-6 required">
                         <label class="control-label" for="mobile">Mobile</label>
                         <input type="tel" class="form-control" id="mobile" required pattern="[0][1][0-9]{9}"
                             minlength="9" maxlength="14" placeholder="01000000000" [(ngModel)]="model.mobile"
                             name="mobile" #mobile="ngModel"
                             [ngClass]="{ 'is-invalid': registrationForm.submitted && mobile.invalid }">
-                        <div *ngIf="registrationForm.submitted && mobile.invalid" class="invalid-feedback">
+                        <div *ngIf="registrationForm.submitted && mobile.invalid" class="required-input-error-msg">
                             <div *ngIf="mobile.errors.required">Mobile is required</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group required">
+                    <div class="form-group col-6 required">
                         <label class="control-label" for="email">Email</label>
                         <input type="email" class="form-control" id="email" required
                             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@xxx.com"
                             autocorrect="off" spellcheck="false" [(ngModel)]="model.email" name="email" #email="ngModel"
                             [ngClass]="{ 'is-invalid': registrationForm.submitted && email.invalid }" email>
-                        <div *ngIf="registrationForm.submitted && email.invalid" class="invalid-feedback">
+                        <div *ngIf="registrationForm.submitted && email.invalid" class="required-input-error-msg">
                             <div *ngIf="email.errors.required">Email is required</div>
                             <div *ngIf="email.errors.email">Email must be a valid email address</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group required">
+                <div class="row">
+                    <div class="form-group col-6 required">
                         <label class="control-label" for="password">Password</label>
                         <input type="password" class="form-control" id="password" required minlength="8"
                             placeholder="at least 8 characters" [(ngModel)]="model.password" name="password"
                             #password="ngModel"
                             [ngClass]="{ 'is-invalid': registrationForm.submitted && password.invalid }">
-                        <div *ngIf="registrationForm.submitted && password.invalid" class="invalid-feedback">
+                        <div *ngIf="registrationForm.submitted && password.invalid" class="required-input-error-msg">
                             <div *ngIf="password.errors.required">Password is required</div>
                             <div *ngIf="password.errors.minlength">Password must be at least 8 characters</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group required">
+                    <div class="form-group col-6 required">
                         <label class="control-label" for="confirmPassword">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" required minlength="8"
                             [(ngModel)]="model.confirmPassword" name="confirmPassword" #confirmPassword="ngModel"
                             [ngClass]="{ 'is-invalid': registrationForm.submitted && confirmPassword.invalid}">
-                        <!-- [ngClass]="{ 'is-invalid': registrationForm.submitted && confirmPassword.invalid }"> -->
-                        <div *ngIf="registrationForm.submitted && confirmPassword.invalid" class="invalid-feedback">
+                        <div *ngIf="registrationForm.submitted && confirmPassword.invalid"
+                            class="required-input-error-msg">
                             <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
-                            <div *ngIf="confirmPassword.errors.mustMatch">Confirm Password must match the Password
+                            <div *ngIf="confirmPassword.errors.mustMatch">Confirm Password must match the
+                                Password
                             </div>
-                           
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="row form-check-block">
-                    <div class="col-3">
-                        <label class="control-label req" for="gender">Gender</label>
-                    </div>
-                    <div class="col-3">
-                        <input class="form-control form-check-input input-radio" type="radio" value="female" required
-                            [(ngModel)]="model.gender" name="gender">
-                        <label for="female">Female</label>
-                    </div>
-                    <div class="col-3">
-                        <input class="form-control form-check-input input-radio" type="radio" value="male"
-                            [(ngModel)]="model.gender" name="gender">
-                        <label for="male">Male</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row pb-3">
-                <div class="col-4">
-                    <label for="country">Country</label>
-                    <select class="form-control" id="country" required [(ngModel)]="model.country" name="country"
-                        (ngModelChange)="changeSelectedCountry($event)">
-                        <option [value]="country.name" *ngFor="let country of countryList">
-                            {{country.name}}
-                        </option>
-                    </select>
-                </div>
-                <div class="col-4">
-                    <label for="gov">Governorate</label>
-                    <select class="form-control" id="gov" required [(ngModel)]="model.gov" name="gov">
-                        <option [value]="governorate.name" *ngFor="let governorate of suitableGovernorateList"
-                            (onSelectionChange)="changeSelectedGovernorate($event,governorate)">
-                            {{governorate.name}}
-                        </option>
-                    </select>
-                </div>
-                <div class="col-4">
-                    <label for="area">Area</label>
-                    <select class="form-control" id="area" required [(ngModel)]="model.area" name="area"></select>
-                    <option [value]="area.name" *ngFor="let area of suitableAreaList"
-                        (onSelectionChange)="changeSelectedArea($event)">
-                        {{area.name}}
-                    </option>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label" for="address">Address</label>
-                <input type="text" class="form-control" id="address" [(ngModel)]="model.address" name="address">
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <label class="control-label req" for="accountTypeRadio">Tell us who you are</label>
+                <div class="form-group row">
+                    <div class="col-12 form-check-block">
+                        <div class="row">
+                            <label class="col-12 control-label req" for="gender">Gender</label>
                         </div>
-                    </div>
-                    <div class="row pl-4 pb-3">
-                        <div class="col-4">
-                            <input class="form-control form-check-input input-radio" type="radio"
-                                value="lookingForServiceRadio" required [(ngModel)]="model.accountType"
-                                name="accountType">
-                            <label for="lookingForServiceRadio">Looking for a service</label>
+                        <div class="row pl-4">
+                            <div class="col-3 pb-0 mb-0">
+                                <input class="form-control form-check-input input-radio" type="radio" value="female"
+                                    required [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+                                <label for="female" class="control-incontent">Female</label>
+                            </div>
+                            <div class="col-3 pb-0 mb-0">
+                                <input class="form-control form-check-input input-radio" type="radio" value="male"
+                                    [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+                                <label for="male" class="control-incontent">Male</label>
+                            </div>
+                            <div class="col-6 pb-0 mb-0"></div>
                         </div>
-                        <div class="col-3">
-                            <input class="form-control form-check-input input-radio" type="radio"
-                                value="handworkerRadio" required [(ngModel)]="model.accountType" name="accountType">
-                            <label for="handworkerRadio">Handworker</label>
-                        </div>
-                        <div class="col-5">
-                            <input class="form-control form-check-input input-radio" type="radio" value="tradeRadio"
-                                required [(ngModel)]="model.accountType" name="accountType">
-                            <label for="tradeRadio">have a Shop/ Company</label>
+                        <div *ngIf="registrationForm.submitted && gender.invalid" class="required-input-error-msg">
+                            <div *ngIf="gender.errors.required">Gender is required</div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <button class="btn btn-red-text-white" type="submit" title="register">Register</button>
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label for="country" class="control-label">Country</label>
+                        <select class="form-control" id="country" required [(ngModel)]="model.country" name="country"
+                            (ngModelChange)="changeSelectedCountry($event)" #country="ngModel">
+                            <option [value]="country.name" *ngFor="let country of countryList">
+                                {{country.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="registrationForm.submitted && country.invalid" class="required-input-error-msg">
+                            <div *ngIf="country.errors.required">choose a selection</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="gov" class="control-label">Governorate</label>
+                        <select class="form-control" id="gov" required [(ngModel)]="model.gov" name="gov"
+                            (ngModelChange)="changeSelectedGovernorate($event)" #gov="ngModel">
+                            <option [value]="governorate.name" *ngFor="let governorate of suitableGovernorateList">
+                                {{governorate.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="registrationForm.submitted && gov.invalid" class="required-input-error-msg">
+                            <div *ngIf="gov.errors.required">choose a selection</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="area" class="control-label">Area</label>
+                        <select class="form-control" id="area" required [(ngModel)]="model.area" name="area"
+                            #area="ngModel">
+                            <option [value]="area.name" *ngFor="let area of suitableAreaList">
+                                {{area.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="registrationForm.submitted && area.invalid" class="required-input-error-msg">
+                            <div *ngIf="area.errors.required">choose a selection</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label class="control-label" for="address">Address (optional)</label>
+                        <input type="text" class="form-control" id="address" [(ngModel)]="model.address" name="address">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 form-check-block">
+                        <div class="row">
+                            <label class="col-12 control-label req" for="accountTypeRadio">Tell us who you are</label>
+                        </div>
+                        <div class="row pl-4">
+                            <div class="col-4">
+                                <input class="form-control form-check-input input-radio" type="radio"
+                                    value="lookingForServiceRadio" required [(ngModel)]="model.accountType"
+                                    name="accountType" #accountType="ngModel">
+                                <label for="lookingForServiceRadio" class="control-incontent">Seeking a service</label>
+                            </div>
+                            <div class="col-3">
+                                <input class="form-control form-check-input input-radio" type="radio"
+                                    value="handworkerRadio" required [(ngModel)]="model.accountType" name="accountType"
+                                    #accountType="ngModel">
+                                <label for="handworkerRadio" class="control-incontent">Handworker</label>
+                            </div>
+                            <div class="col-5">
+                                <input class="form-control form-check-input input-radio" type="radio" value="tradeRadio"
+                                    required [(ngModel)]="model.accountType" name="accountType" #accountType="ngModel">
+                                <label for="tradeRadio" class="control-incontent">have a Shop/ Company</label>
+                            </div>
+                        </div>
+                        <div *ngIf="registrationForm.submitted && accountType.invalid" class="required-input-error-msg">
+                            <div *ngIf="accountType.errors.required">this information is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3"></div>
+                    <button class="col-6 btn btn-red-text-white" type="submit" title="register">Register</button>
+                    <!-- <button [disabled]="!registrationForm.valid" class="btn btn-red-text-white" type="submit" title="register">Register</button> -->
+                    <div class="col-3"></div>
+                </div>
             </div>
         </form>
     </div>
+    <!-- <div class="col-3 regisrtation-logo-background">3333</div> -->
 </div>
-{{model | json}}
+<!-- {{model | json}} -->
+
+<div class="row m-10 p-5 regisrtation-background">
+    <div class="col-8 regisrtation-form">
+        <form #registrationForm="ngForm" name="form" (ngSubmit)="registrationForm.form.valid && onSubmit()"
+            [mustMatch]="['password', 'confirmPassword']" novalidate class="row">
+            <div class="col-8">
+                <div class="row">
+                    <div class="form-group col-12">
+                        <p class="form-instructions">Please enter the following information to join us:</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group required col-4">
+                        <label class="control-label" for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" required minlength="3" maxlength="20"
+                            [(ngModel)]="model.firstName" name="firstName" #firstName="ngModel"
+                            [ngClass]="{ 'is-invalid': registrationForm.submitted && firstName.invalid }">
+                        <div *ngIf="registrationForm.submitted && firstName.invalid" class="required-input-error-msg">
+                            <div *ngIf="firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group required col-4">
+                        <label class="control-label" for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" required minlength="3" maxlength="20"
+                            [(ngModel)]="model.lastName" name="lastName" #lastName="ngModel"
+                            [ngClass]="{ 'is-invalid': registrationForm.submitted && lastName.invalid }">
+                        <div *ngIf="registrationForm.submitted && lastName.invalid" class="required-input-error-msg">
+                            <div *ngIf="lastName.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="col-auto form-check-block">
+                        <div class="row">
+                            <label class="col-12 control-label req" for="gender">Gender</label>
+                        </div>
+                        <div class="row pl-4">
+                            <div class="col-6 pb-0 mb-0">
+                                <input class="form-control form-check-input input-radio" type="radio" value="female"
+                                    required [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+                                <label for="female" class="control-incontent">Female</label>
+                            </div>
+                            <div class="col-6 pb-0 mb-0 pl-4">
+                                <input class="form-control form-check-input input-radio" type="radio" value="male"
+                                    [(ngModel)]="model.gender" name="gender" #gender="ngModel">
+                                <label for="male" class="control-incontent">Male</label>
+                            </div>
+                        </div>
+                        <div *ngIf="registrationForm.submitted && gender.invalid" class="required-input-error-msg">
+                            <div *ngIf="gender.errors.required">Gender is required</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-6 required">
+                        <label class="control-label" for="mobile">Mobile</label>
+                        <input type="tel" class="form-control" id="mobile" required pattern="[0][1][0-9]{9}"
+                            minlength="9" maxlength="14" placeholder="01000000000" [(ngModel)]="model.mobile"
+                            name="mobile" #mobile="ngModel"
+                            [ngClass]="{ 'is-invalid': registrationForm.submitted && mobile.invalid }">
+                        <div *ngIf="registrationForm.submitted && mobile.invalid" class="required-input-error-msg">
+                            <div *ngIf="mobile.errors.required">Mobile is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-6 required">
+                        <label class="control-label" for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="example@xxx.com"
+                            autocorrect="off" spellcheck="false" [(ngModel)]="model.email" name="email" #email="ngModel"
+                            [ngClass]="{ 'is-invalid': registrationForm.submitted && email.invalid }" email>
+                        <div *ngIf="registrationForm.submitted && email.invalid" class="required-input-error-msg">
+                            <div *ngIf="email.errors.required">Email is required</div>
+                            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-6 required">
+                        <label class="control-label" for="password">Password</label>
+                        <input type="password" class="form-control" id="password" required minlength="8"
+                            placeholder="at least 8 characters" [(ngModel)]="model.password" name="password"
+                            #password="ngModel"
+                            [ngClass]="{ 'is-invalid': registrationForm.submitted && password.invalid }">
+                        <div *ngIf="registrationForm.submitted && password.invalid" class="required-input-error-msg">
+                            <div *ngIf="password.errors.required">Password is required</div>
+                            <div *ngIf="password.errors.minlength">Password must be at least 8 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-6 required">
+                        <label class="control-label" for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required minlength="8"
+                            [(ngModel)]="model.confirmPassword" name="confirmPassword" #confirmPassword="ngModel"
+                            [ngClass]="{ 'is-invalid': registrationForm.submitted && confirmPassword.invalid}">
+                        <div *ngIf="registrationForm.submitted && confirmPassword.invalid"
+                            class="required-input-error-msg">
+                            <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
+                            <div *ngIf="confirmPassword.errors.mustMatch">Confirm Password must match the
+                                Password
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label for="country" class="control-label">Country</label>
+                        <select class="form-control" id="country" required [(ngModel)]="model.country" name="country"
+                            (ngModelChange)="changeSelectedCountry($event)" #country="ngModel">
+                            <option [value]="country.name" *ngFor="let country of countryList">
+                                {{country.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="registrationForm.submitted && country.invalid" class="required-input-error-msg">
+                            <div *ngIf="country.errors.required">choose a selection</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="gov" class="control-label">Governorate</label>
+                        <select class="form-control" id="gov" required [(ngModel)]="model.gov" name="gov"
+                            (ngModelChange)="changeSelectedGovernorate($event)" #gov="ngModel">
+                            <option [value]="governorate.name" *ngFor="let governorate of suitableGovernorateList">
+                                {{governorate.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="registrationForm.submitted && gov.invalid" class="required-input-error-msg">
+                            <div *ngIf="gov.errors.required">choose a selection</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="area" class="control-label">Area</label>
+                        <select class="form-control" id="area" required [(ngModel)]="model.area" name="area"
+                            #area="ngModel">
+                            <option [value]="area.name" *ngFor="let area of suitableAreaList">
+                                {{area.name}}
+                            </option>
+                        </select>
+                        <div *ngIf="registrationForm.submitted && area.invalid" class="required-input-error-msg">
+                            <div *ngIf="area.errors.required">choose a selection</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label class="control-label" for="address">Address (optional)</label>
+                        <input type="text" class="form-control" id="address" [(ngModel)]="model.address" name="address">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 form-check-block">
+                        <div class="row">
+                            <label class="col-12 control-label req" for="accountTypeRadio">Tell us who you are</label>
+                        </div>
+                        <div class="row pl-4">
+                            <div class="col-4">
+                                <input class="form-control form-check-input input-radio" type="radio"
+                                    value="lookingForServiceRadio" required [(ngModel)]="model.accountType"
+                                    name="accountType" #accountType="ngModel">
+                                <label for="lookingForServiceRadio" class="control-incontent">Seeking a service</label>
+                            </div>
+                            <div class="col-3">
+                                <input class="form-control form-check-input input-radio" type="radio"
+                                    value="handworkerRadio" required [(ngModel)]="model.accountType" name="accountType"
+                                    #accountType="ngModel">
+                                <label for="handworkerRadio" class="control-incontent">Handworker</label>
+                            </div>
+                            <div class="col-5">
+                                <input class="form-control form-check-input input-radio" type="radio" value="tradeRadio"
+                                    required [(ngModel)]="model.accountType" name="accountType" #accountType="ngModel">
+                                <label for="tradeRadio" class="control-incontent">have a Shop/ Company</label>
+                            </div>
+                        </div>
+                        <div *ngIf="registrationForm.submitted && accountType.invalid" class="required-input-error-msg">
+                            <div *ngIf="accountType.errors.required">this information is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-3"></div>
+                    <button class="col-6 btn btn-red-text-white" type="submit" title="register">Register</button>
+                    <!-- <button [disabled]="!registrationForm.valid" class="btn btn-red-text-white" type="submit" title="register">Register</button> -->
+                    <div class="col-3"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-3 regisrtation-logo-background  p-5 text-center">
+        <div class="row py-4">
+            <div class="h1 col-12">
+                Welcome!
+            </div>
+        </div>
+        <div class="row pt-4 pb-5">
+            <div class="h3">
+                happy to get you with us
+            </div>
+        </div>
+        <div class="row pt-4 pb-5">
+            <div class="h4">
+                Fill-in your personal information to use our service whenever youe need & wherever you are
+            </div>
+        </div>
+    </div>
+
+</div>

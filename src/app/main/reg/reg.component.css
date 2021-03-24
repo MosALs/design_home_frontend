@@ -1,13 +1,35 @@
+
+.regisrtation-background{
+    padding: 0;
+    margin: 0;
+    /* background-color: var(--theme-color-rgb-black); */
+    background-color: var(--theme-color-yellow);
+    opacity:unset;
+    width: 100%;
+    /* opacity: 0.3; */
+  }
+form{
+    display: block;
+    width: 100%;
+}
+.form-instructions{
+    /* font-weight: bold; */
+    font-size: 1.3rem !important;
+    font-family: sans-serif;
+    color: var(--theme-color-white);
+}
 .form-group.required .control-label:after {
-    color: red;
-    content:" *";
+    color: var(--required-red-mark);;
+    content:"*";
     font-weight: bold;
     display: inline;
+    position: absolute;
+}
+.control-label{
+    color: var(--theme-color-white);
 }
 
-.form-instructions{
-    font-weight: bold;
-}
+
 
 .input-radio{
     height: 15px;
@@ -19,10 +41,16 @@
 }
 
 .req:after{
-    color: red;
-    content:" *";
+    color: var(--required-red-mark);;
+    content:"*";
     font-weight: bold;
-    display: inline; 
+    display: inline;
+    position: absolute;
+}
+.required-input-error-msg{
+    font-size: medium;
+    color: var(--theme-color-red);
+    padding-top: 0px;
 }
 
 .ng-valid[required], .ng-valid.required  {
@@ -30,5 +58,30 @@
   }
   
 .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+    border-left: 5px solid var(--theme-color-red); /* red */
   }
+
+
+.control-incontent{
+    color: var(--theme-color-white);
+    font-size: 0.93rem;
+}
+
+
+
+
+.regisrtation-form{
+    border: none;
+    background: var(--theme-color-rgb-black);
+    /* border-top-right-radius: 25% 45%;
+    border-bottom-right-radius: 25% 45%; */
+    padding: 20px 80px 15px 30px;
+    /* padding: 20px 10px 15px 30px; */
+
+    width: 100vw;
+}
+
+.regisrtation-logo-background{
+    background-color: var(--theme-color-white);
+    margin: 70px 0px 70px -200px;
+}

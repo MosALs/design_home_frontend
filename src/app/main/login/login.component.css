@@ -1,6 +1,6 @@
 mat-card {
 box-shadow: none !important;
-background-color:rgb(34, 32, 32);
+background-color:var(--theme-color-rgb-black);
 }
 
 form {
@@ -15,7 +15,7 @@ form {
     content: "";
     position: absolute;
     height: 3px;
-    background:  #ffd11a;
+    background:  var(--theme-color-yellow);
     width: 90%;
     left: 30%;
     transform: translateX(-20%);
@@ -24,7 +24,7 @@ form {
     margin-left: 7px;
   }
   ::ng-deep .mat-form-field-required-marker {
-    color: red
+    color: var(--required-red-mark);
   }
   ::ng-deep .mat-form-field-wrapper{
     padding-bottom: 2px;
@@ -70,13 +70,11 @@ form {
 .login-background{
   padding: 0;
   margin: 0;
-  background-color: rgb(34, 32, 32);
+  background-color: var(--theme-color-rgb-black);
   width: 100%;
   height: 100vh;
   /* opacity: 0.3; */
 }
-
-
 
 .login-box{
   width: 280px;
@@ -84,22 +82,22 @@ form {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  color: white;
+  color: var(--theme-color-white);
 }
 h2{
   float: left;
   font-size: 40px;
-  border-bottom: 5px solid #ffd11a;
+  border-bottom: 5px solid var(--theme-color-yellow);
   margin-bottom: 40px;
   padding: 10px 0;
-  color: #ffffff;
+  color: var(--theme-color-white);
 }
 
 .btn{
   width: 100%;
   background: none;
-  border: 2px solid #ffd11a;
-  color: white;
+  border: 2px solid var(--theme-color-yellow);
+  color: var(--theme-color-white);
   padding: 5px;
   font-size: 18px;
   cursor: pointer;
@@ -107,24 +105,24 @@ h2{
 }
 
 i{
-  color: aliceblue !important;
+  color: var(--theme-color-aliceblue) !important;
 }
 mat-icon{
-  color: aliceblue;
+  color: var(--theme-color-aliceblue);
 }
 
 /*>>>>>   INPUT  <<<<<*/
 input{
-  color: aliceblue;
-  background-color: rgb(34, 32, 32);
+  color: var(--theme-color-aliceblue);
+  background-color: var(--theme-color-rgb-black);
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active
 {
-  box-shadow: 0 0 0 50px rgb(34, 32, 32) inset;
-  -webkit-text-fill-color: aliceblue;
+  box-shadow: 0 0 0 50px var(--theme-color-rgb-black) inset;
+  -webkit-text-fill-color: var(--theme-color-aliceblue);
 } 
 ::placeholder {
   color: #777;

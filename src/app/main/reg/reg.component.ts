@@ -79,67 +79,29 @@ export class RegComponent implements OnInit {
 
     // onSubmit(){
     //   this.submitted = true;
+    //   console.log("RegistrationForm is submitted");
+    //   console.log("Model", this.model);
+    //   return this.model;
     // }
 
   }
 
-  // patternValidator(): ValidatorFn {
-  //   return (control: AbstractControl): { [key: string]: any } => {
-  //     if (!control.value) {
-  //       return null;
-  //     }
-  //     const regex = new RegExp('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$');
-  //     const valid = regex.test(control.value);
-  //     return valid ? null : { invalidPassword: true };
-  //   };
-  // }
-
-  // MatchPassword(password: string, confirmPassword: string) {
-  //   return (formGroup: FormGroup) => {
-  //     const passwordControl = formGroup.controls[password];
-  //     const confirmPasswordControl = formGroup.controls[confirmPassword];
-
-  //     if (!passwordControl || !confirmPasswordControl) {
-  //       return null;
-  //     }
-
-  //     if (confirmPasswordControl.errors && !confirmPasswordControl.errors.passwordMismatch) {
-  //       return null;
-  //     }
-
-  //     if (passwordControl.value !== confirmPasswordControl.value) {
-  //       confirmPasswordControl.setErrors({ passwordMismatch: true });
-  //     } else {
-  //       confirmPasswordControl.setErrors(null);
-  //     }
-  //   }
-  // }
-
 
   changeSelectedCountry(event:string) {
-    console.log("changeSelectedCountry");
     if (event) {
-      let country: Country[] = this.countryList.filter(c => c.name == event);
-      let coun = country[0];
-      this.suitableGovernorateList = this.govenoratesList.filter(g => g.cid == coun.cid);
+      let counList: Country[] = this.countryList.filter(c => c.name == event);
+      let selectedCountry = counList[0];
+      this.suitableGovernorateList = this.govenoratesList.filter(g => g.cid == selectedCountry.cid);
     }
   }
 
-  // changeSelectedGovernorate(event: SelectControlValueAccessor, governorate: Governorate) {
-  //   if (event.isUserInput) {
-  //     // console.log("governorateId:", governorate.bid);
-  //     this.suitableAreaList = this.areasList.filter(a => a.gid == governorate.gid);
-  //     this.regGov = event.source.value;
-  //     console.log("regGov", this.regGov);
-  //   }
-  // }
-
-  // changeSelectedArea(event: SelectControlValueAccessor) {
-  //   this.regArea = event.source.value;
-  //   console.log("regArea", this.regArea);
-  // }
-
-  
+  changeSelectedGovernorate(event:string) {
+    if (event) {
+      let govList: Governorate[] = this.govenoratesList.filter(g => g.name == event);
+      let selectedGovenrate = govList[0];
+      this.suitableAreaList = this.areasList.filter(a => a.gid == selectedGovenrate.gid);
+    }
+  }
 
 }
 
@@ -156,6 +118,7 @@ export interface RegisterModel{
    country: Country;
    gov: Governorate;
    area: Area;
+   address?: string;
    accountType: string;
 }
 
