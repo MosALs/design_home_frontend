@@ -1,133 +1,127 @@
-    mat-card {
-      box-shadow: none !important;
-      padding: 5px 30px 5px !important; 
-   } 
 
-  
-  .genderControl label:first-child
-  .genderControl label{color:#ef0f0f;line-height:34px}
-  .sourcesans-regular{font-weight:400;font-style:normal}
-  #divk label{margin:3px 0 0!important;font-weight:400}
-  .col-sm-9{float:left; width:75%}
-
-  .ss{
-    color: rgba(0, 0, 0, 0.54);
-    padding-left: 13px;
-  }
-
-  .register-background-img{
-    padding: 0;
-    margin: 0;
-    background-image: url('src\assets\images\registerBackGroundImg.jpg');
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
-    background-attachment: fixed;
-    background-size: cover;
-    /* opacity: 0.3; */
-
+.regisrtation-background{
+  padding: 0;
+  margin: 0;
+  /* background-color: var(--theme-color-rgb-black); */
+  background-color: var(--theme-color-yellow);
+  opacity:unset;
+  width: 100%;
+  /* opacity: 0.3; */
+}
+form{
+  display: block;
+  width: 100%;
+}
+.form-instructions{
+  /* font-weight: bold; */
+  font-size: 1.3rem !important;
+  font-family: sans-serif;
+  color: var(--theme-color-white);
+}
+.form-group.required .control-label:after {
+  color: var(--required-red-mark);;
+  content:"*";
+  font-weight: bold;
+  display: inline;
+  position: absolute;
+}
+.control-label{
+  color: var(--theme-color-white);
 }
 
 
-.btn-red-text-white:focus {
-  outline: none;
+
+.input-radio{
+  height: 15px;
+  width: 15px; 
+  margin-top: 0px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  margin-top: 5px;
 }
 
-.btn-account-type{
-  font-size: 0.8rem;
+.req:after{
+  color: var(--required-red-mark);;
+  content:"*";
+  font-weight: bold;
+  display: inline;
+  position: absolute;
 }
-.text-account-type{
-  font-size: 1rem;
-}
-
-
-mat-form-field {
-  display: block !important;
-}
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick{ height: 36px; }
-::ng-deep .mat-form-field-flex > .mat-form-field-infix { border-top: 5px solid transparent; }
-::ng-deep .mat-form-field-required-marker {color: var(--required-red-mark);}
-
-.form-control{
-  height: 5px !important;
+.required-input-error-msg{
+  font-size: medium;
+  color: var(--required-red-mark);
+  padding-top: 0px;
 }
 
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid var(--theme-color-yellow); /* yellow */
+}
 
-/* mat-radio-button */
-::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-  opacity: 0 !important; /*click effect color change*/
+.ng-invalid:not(form)  {
+  border-left: 5px solid var(--theme-color-red); /* red */
+}
+
+
+.control-incontent{
+  color: var(--theme-color-white);
+  font-size: 0.93rem;
+}
+
+.regisrtation-form{
+  border: none;
+  background: var(--theme-color-rgb-black);
+  /* border-top-right-radius: 25% 45%;
+  border-bottom-right-radius: 25% 45%; */
+  /* padding: 20px 80px 15px 30px; */
+  padding: 20px 10px 15px 30px;
+  width: 100vw;
+}
+
+.regisrtation-logo-background{
+  background-color: var(--theme-color-white);
+  /* margin: 70px 0px 70px -200px; */
+}
+
+/*>>>>>   INPUT  <<<<<*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+-webkit-box-shadow: 0 0 0px 1000px white inset;
+} 
+
+/*>>>>>    CHECK BOX   <<<<<*/
+/* ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  opacity: 0 !important; 
   background-color: var(--theme-color-yellow) !important;
 }  
 ::ng-deep  .mat-radio-button.mat-accent .mat-radio-inner-circle {
-  background-color: var(--theme-color-yellow) !important; /*inner circle color change*/
+  background-color: var(--theme-color-yellow) !important; 
 }  
 ::ng-deep  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-  border-color: var(--theme-color-yellow) !important; /*outer ring color change*/
-}
-:host ::ng-deep .mat-radio-container{
-    height: 15px;
-    width: 15px;
-  }
-:host ::ng-deep .mat-radio-outer-circle{
-    height: 15px;
-    width: 15px; 
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-:host ::ng-deep .mat-radio-inner-circle{
-    height: 15px;
-    width: 15px; 
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-:host ::ng-deep .mat-radio-button .mat-radio-ripple{
-    height: 20px; /*double of your required circle radius*/
-    width: 20px;  /*double of your required circle radius*/
-    left: calc(50% - 15px); /*'10px'-same as your required circle radius*/
-    top: calc(50% - 15px); /*'10px'-same as your required circle radius*/
-}
-.workingDays-radio-group {
-  display: flex;
-  flex-direction: column;
-  margin: 15px 0;
-}
+  border-color: var(--theme-color-yellow) !important;
+} */
 
 
 
-/* Check box */
-.checkBox-section {
-  display: inline-block;
-  align-content: left;
-  align-items: left;
-  height: 60px;
-  ;
+/* Radio */
+
+input[type="radio"]:after {
+  background-color: var(--theme-color-aliceblue);
+  box-shadow: inset 0 0 0 1px var(--theme-color-aliceblue),
+              0 1px 1px var(--theme-color-aliceblue),;
+
+  content: '';
+  display: block;
+  height: 7px;
+  left: 4px;
+  position: relative;
+  top: 4px;
+  width: 7px;
 }
-.checkBox-no-bullets {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+input[type="radio"]:checked:after {
   background-color: var(--theme-color-yellow);
+  box-shadow: inset 0 0 0 1px var(--theme-color-yellow),
+              0 1px 1px var(--theme-color-aliceblue);
 }
-
-
-/* mat accordion */
-.example-action-buttons {
-  padding-bottom: 20px;
-}
-.mat-accordion .mat-expansion-panel-header-title,
-.mat-accordion .mat-expansion-panel-header-description {
-  flex-basis: 0;
-}
-.mat-accordion .mat-expansion-panel-header-description {
-  justify-content: space-between;
-  align-items: center;
-}
-.mat-accordion .mat-form-field + .mat-form-field {
-  margin-left: 8px;
-}
-
-
-
-

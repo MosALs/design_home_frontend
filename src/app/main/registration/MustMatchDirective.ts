@@ -1,6 +1,6 @@
 import { Directive, Input } from '@angular/core';
 import { NG_VALIDATORS, Validator, ValidationErrors, FormGroup } from '@angular/forms';
-import { MustMatch } from './reg.component';
+import { MustMatch } from './registration.component';
 
 
 

@@ -9,9 +9,8 @@ import { AuthenticationService } from '../core/services/authentication.service';
 import { ProfileComponent } from './profile/profile.component';
 import { MainsearchnavbarComponent } from '../mainsearchnavbar/mainsearchnavbar.component';
 import { MediaSliderComponent } from '../media-slider/media-slider.component';
-import { RegComponent } from './reg/reg.component';
 import { AccountTypeEntranceComponent } from './account-type-entrance/account-type-entrance.component';
-import { MustMatchDirective } from './reg/MustMatchDirective';
+import { MustMatchDirective } from './registration/MustMatchDirective';
 
 
 @NgModule({
@@ -21,7 +20,6 @@ import { MustMatchDirective } from './reg/MustMatchDirective';
     ProfileComponent,
     MainsearchnavbarComponent,
     MediaSliderComponent,
-    RegComponent,
     AccountTypeEntranceComponent,
     MustMatchDirective
 
