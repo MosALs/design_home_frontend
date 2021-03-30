@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { RegistrationService } from 'src/app/core/services/registration.service';
 
 
 
@@ -76,21 +77,25 @@ import { FormGroup } from '@angular/forms';
     suitableGovernorateList: Governorate[] = [];
     suitableAreaList: Area[] = [];
   
-    constructor() { }
+    constructor(private regService:RegistrationService) { }
   
     ngOnInit() {
   
   
-      // onSubmit(){
-      //   this.submitted = true;
-      //   console.log("RegistrationForm is submitted");
-      //   console.log("Model", this.model);
-      //   return this.model;
-      // }
-  
+      
     }
-  
-  
+    
+    onSubmit(){
+      this.submitted = true;
+      console.log("RegistrationForm is submitted");
+      console.log("Model", this.model);
+      this.regService.newServerRegister(this.model).subscribe(data => {
+        console.log('data-> ',data);
+        
+      })
+      
+    }
+    
     changeSelectedCountry(event:string) {
       if (event) {
         let counList: Country[] = this.countryList.filter(c => c.name == event);
