@@ -1,5 +1,5 @@
 export const  Authentication={
-    REGISTERATION_URL : "http://localhost:8090/rest/user/register",
+    REGISTERATION_URL : "http://localhost:8090/rest/user/Register",
     AUTHENTICATE_URL:"http://localhost:8090/authenticate"
 };
 

@@ -5,7 +5,6 @@ import { UserRegisterationDto } from '../models/dto/Userregisterationdto';
 import { Authentication } from 'src/app/constants/BackEnd_URLS';
 import { Data } from '@angular/router';
 import { IClient } from '../models/model/IClient';
-import { UserProfile } from 'src/app/main/registration/registration.component';
 
 @Injectable({
   providedIn: 'root'
@@ -42,11 +41,11 @@ export class RegistrationService {
     return this._obs;
   }
 
-  newServerRegister(user: UserProfile): Observable<object> {
+  newServerRegister(iclient: IClient): Observable<object> {
 
-    console.log('registeration service user: ',user );
+    console.log('registeration service iclient: ',iclient );
     
-    this._obs = this.http.post(Authentication.REGISTERATION_URL, user)
+    this._obs = this.http.post(Authentication.REGISTERATION_URL, iclient)
     return this._obs;
   }
 

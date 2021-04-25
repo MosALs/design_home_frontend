@@ -4,7 +4,6 @@ import { BackEndFacadeService } from './back-end-facade.service';
 import { Observable } from 'rxjs';
 import { AccountTypes } from '../core/models/model/AccountTypes';
 import { IClient } from '../core/models/model/IClient';
-import { UserProfile } from '../main/registration/registration.component';
 
 
 @Injectable({
@@ -41,8 +40,8 @@ export class RegisterFacadeService {
   
 
      
-  newRegister(user: UserProfile):Observable<object>{
-    return this._backEndFacadService.getRegistrationService().newServerRegister(user);
+  newRegister(iclient: IClient):Observable<object>{
+    return this._backEndFacadService.getRegistrationService().newServerRegister(iclient);
 
   }
 }
