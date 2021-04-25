@@ -152,20 +152,20 @@
                         <div class="row pl-4">
                             <div class="col-4">
                                 <input class="form-control form-check-input input-radio" type="radio"
-                                    value="lookingForServiceRadio" required [(ngModel)]="model.accountType"
+                                    value="Client" required [(ngModel)]="model.accountType"
                                     name="accountType" #accountType="ngModel">
-                                <label for="lookingForServiceRadio" class="control-incontent">Seeking a service</label>
+                                <label for="Client" class="control-incontent">Seeking a service</label>
                             </div>
                             <div class="col-3">
                                 <input class="form-control form-check-input input-radio" type="radio"
-                                    value="handworkerRadio" required [(ngModel)]="model.accountType" name="accountType"
+                                    value="Handworker" required [(ngModel)]="model.accountType" name="accountType"
                                     #accountType="ngModel">
-                                <label for="handworkerRadio" class="control-incontent">Handworker</label>
+                                <label for="Handworker" class="control-incontent">Handworker</label>
                             </div>
                             <div class="col-5">
-                                <input class="form-control form-check-input input-radio" type="radio" value="tradeRadio"
+                                <input class="form-control form-check-input input-radio" type="radio" value="ShopOrCompany"
                                     required [(ngModel)]="model.accountType" name="accountType" #accountType="ngModel">
-                                <label for="tradeRadio" class="control-incontent">have a Shop/ Company</label>
+                                <label for="ShopOrCompany" class="control-incontent">have a Shop/ Company</label>
                             </div>
                         </div>
                         <div *ngIf="registrationForm.submitted && accountType.invalid" class="required-input-error-msg">

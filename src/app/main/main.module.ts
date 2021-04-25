@@ -9,8 +9,9 @@ import { AuthenticationService } from '../core/services/authentication.service';
 import { ProfileComponent } from './profile/profile.component';
 import { MainsearchnavbarComponent } from '../mainsearchnavbar/mainsearchnavbar.component';
 import { MediaSliderComponent } from '../media-slider/media-slider.component';
-import { AccountTypeEntranceComponent } from './account-type-entrance/account-type-entrance.component';
 import { MustMatchDirective } from './registration/MustMatchDirective';
+import { SpecializationsSmallBoxesSliderComponent } from './specializations-small-boxes-slider/specializations-small-boxes-slider.component';
+import { SpecializationSmallBoxesSkeletonComponent } from './specializations-small-boxes-slider/specialization-small-boxes-skeleton/specialization-small-boxes-skeleton.component';
 
 
 @NgModule({
@@ -20,8 +21,9 @@ import { MustMatchDirective } from './registration/MustMatchDirective';
     ProfileComponent,
     MainsearchnavbarComponent,
     MediaSliderComponent,
-    AccountTypeEntranceComponent,
-    MustMatchDirective
+    MustMatchDirective,
+    SpecializationsSmallBoxesSliderComponent,
+    SpecializationSmallBoxesSkeletonComponent,
 
     
   ],
