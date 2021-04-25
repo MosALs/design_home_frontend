@@ -23,8 +23,8 @@
 
 
 body{
-    /* padding-top: 50px; */
-    /* overflow-y: hidden; */
+    padding-top: 50px; 
+    overflow-y: hidden;
     overflow: scroll; 
 }
 /* div{
