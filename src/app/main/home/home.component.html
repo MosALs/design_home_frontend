@@ -121,9 +121,81 @@
                 </div>
             </div>
         </div>
-        <div class="row px-5">التخصصات</div>
-        <div class="row px-5">معلومات عن الخدمات</div>
-        <div class="row px-5">pick-up search</div>
-        <div class="row px-5">footer</div>
+        <div class="row px-5 py-4 third-block">التخصصات</div>
+        <div><br><br></div>
+        <div class="row px-5 py-4 fourth-block">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="fourth-block-img" src="./../../../assets/images/settings.png" alt="">
+                        <h5 class="pl-4">All your Needs with KMGN</h5>
+                    </div>
+                    <div class="card-footer">
+                        <h6>Search for any service you need, any related products you want to buy. And you will get
+                            fully-detailed services and products.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="fourth-block-img" src="./../../../assets/images/review.png" alt="">
+                        <h5 class="pl-4">Verified Customers' Feedback</h5>
+                    </div>
+                    <div class="card-footer">
+                        <h6>The ratings and reviews of any handworker, shop or company are from customers who used their
+                            services or bought from them.</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="fourth-block-img" src="./../../../assets/images/customer.png" alt="">
+                        <h5 class="pl-4">All we care about is YOU</h5>
+                    </div>
+                    <div class="card-footer">
+                        <h6>All we care about is to serve you in the best way. Making you satisfied with all you get is
+                            our work, our job, our goal.</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row px-5 py-4 fifth-block">
+            <div class="col-5">
+                <div class="row">
+                    <h5>Pick a nearby service :</h5>
+                </div>
+                <div class="row">
+                    <mat-chip-list class="chip-list" cdkDropList cdkDropListOrientation="horizontal"
+                        (cdkDropListDropped)="nearbyServicesChip($event)" selectable>
+                        <mat-chip #c="matChip" class="chip-box" cdkDrag
+                            *ngFor="let nearbyServicesChip of nearbyServicesChips" (click)="selectNearbyServicesChip(c)"
+                            [value]="nearbyServicesChip">
+                            {{nearbyServicesChip}}
+                        </mat-chip>
+                    </mat-chip-list>
+                    {{model | json}}
+                </div>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-5">
+                <div class="row">
+                    <h5>Discover available services in those areas :</h5>
+                </div>
+                <div class="row">
+                    <mat-chip-list class="chip-list" cdkDropList cdkDropListOrientation="horizontal"
+                        (cdkDropListDropped)="area($event)" selectable>
+                        <mat-chip #c="matChip" class="chip-box" cdkDrag
+                            *ngFor="let area of areas" (click)="selectAreaChip(c)"
+                            [value]="area">
+                            {{area}}
+                        </mat-chip>
+                    </mat-chip-list>
+                    {{model | json}}
+                </div>
+            </div>
+        </div>
+        <!-- <footer></footer> -->
     </div>
 </div>

@@ -82,6 +82,10 @@ body{
     background-color: var(--theme-color-yellow);
     color: var(--theme-color-white);
 }
+.btn-yellow-text-black{
+    background-color: var(--theme-color-yellow);
+    color: var(--theme-color-black);
+}
 
 
 

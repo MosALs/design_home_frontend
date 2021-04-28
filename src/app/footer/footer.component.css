@@ -1,2 +1,25 @@
+.signUp-btn{
+    /* font-weight: bold; */
+    font-size: large;
+}
 
+.footer-img{
+    width: 25px;
+    height: 25px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-left: 8px !important;
+    margin-right: 5px !important;
+}
 
+.footer{
+    background-color: var(--theme-color-rgb-black);
+}
+
+.copyRight-div{
+    background-color: var(--theme-color-white);
+}
+.copyRight-txt{
+    font-size: x-large;
+    text-decoration-color: var(--theme-color-black);
+}

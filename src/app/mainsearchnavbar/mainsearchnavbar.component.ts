@@ -67,7 +67,20 @@ export class MainsearchnavbarComponent implements OnInit {
   suitableAreaList: Area[] = [];
 
 
-  specializationsList= ['نجار','سباك','كهربائى','فني تكييف' ];
+  specializationsList= [
+    "سباك",
+    "كهربائي",
+    "ألوميتال",
+    "نجار",
+    "محارة",
+    "دهانات",
+    "نقاش",
+    "حداد",
+    "ستورجي",
+    "ميكانيكي",
+    "تكييفات",
+    "سيراميك",
+   ];
   accountTypesList=['صنايعى','محل','شركه'];
  
   // searchForm:FormGroup

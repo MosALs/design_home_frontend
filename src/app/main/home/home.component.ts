@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { MatChip } from '@angular/material/chips';
 
 @Component({
   selector: 'home',
@@ -7,50 +8,80 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  model = new NearbyServicesChipModel();
 
-  title = 'angular-Reactive-add-new-row-dynamically';
-  FormGroup : FormGroup;
-  TotalRow:number;
+  nearbyServicesChips : NearbyServicesChip[] =[
+    "سباك",
+    "كهربائي",
+    "ألوميتال",
+    "نجار",
+    "محارة",
+    "دهانات",
+    "نقاش",
+    "حداد",
+    "ستورجي",
+    "ميكانيكي",
+    "تكييفات",
+    "سيراميك",
+  ];
 
-  constructor(private _fb:FormBuilder){}
+  areas: Area[] = [
+    'Maadi',
+    'Nasr City',
+    'Shoubra',
+    'New Cairo',
+    'West el-Balad',
+    'Dokki',
+    'Mohandeseen',
+    'Haram',
+    'Faisal',
+    'Agouza',
+    'Roshdy',
+    'Smouha',
+    'Louran',
+    'Bahary',
+    'Cleopatra',
+    'Ibsheway',
+    'el-Fayoum City',
+    'Damietta Elgedida',
+    'Damietta City',
+  ];
 
-  ngOnInit():void{
+  constructor(){}
+
+  ngOnInit(){
     
-    this.FormGroup = this._fb.group({
-      itemRows: this._fb.array( [this.initItemRow()]),
-    })
   }
-
-  initItemRow(){
-
-    return this._fb.group({
-      Name:[''],
-      RollNo:[''],
-      Class:[''],
-      MobileNo:['']
-    })
   
+  nearbyServicesChip(event: CdkDragDrop<NearbyServicesChip[]>) {
+    moveItemInArray(this.nearbyServicesChips, event.previousIndex, event.currentIndex);
   }
 
-  addNewRow(){
-    const control = <FormArray>this.FormGroup.controls['itemRows'];
-    control.push(this.initItemRow())
+  selectNearbyServicesChip(chip: MatChip){
+    console.log("chip", chip.value);
+    this.model.specialization = chip.value;
   }
 
-  deleteRow(index:number){
-    const control = <FormArray>this.FormGroup.controls['itemRows'];
-   if(control !=null){
-     this.TotalRow= control.value.length
-   }
+  area(event: CdkDragDrop<Area[]>) {
+    moveItemInArray(this.areas, event.previousIndex, event.currentIndex);
+  }
 
-   if(this.TotalRow>1){
-     control.removeAt(index);
-   }
-   else{
-     alert("one record is mandatory");
-     return false;
-   }
+  selectAreaChip(chip: MatChip){
+    console.log("chip", chip.value);
+    this.model.area = chip.value;
   }
 
 
+
+}
+
+
+export interface NearbyServicesChip{
+}
+export interface Area{
+}
+
+export class NearbyServicesChipModel{
+  public specialization?: string;
+  public area?: string;
 }

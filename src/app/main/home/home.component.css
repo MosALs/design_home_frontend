@@ -49,3 +49,28 @@ mainsearchnavbar{
     width: 120px;
     height: 120px;
 }
+
+/* fourth-block */
+.fourth-block-img{
+    width: 40px;
+    height: 40px;
+}
+.card{
+    border: none;
+}
+.card-body{
+    display: flex;
+    padding-left: 0px !important;
+}
+
+/* fifth-block */
+.chip-box{
+    cursor: pointer;
+}
+.chip-box.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .chip-list .cdk-drop-list-dragging {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }

@@ -30,6 +30,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
 // import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import { ValidateEqualModule } from 'ng-validate-equal';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 
 
@@ -76,7 +78,8 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     // NgxMaterialTimepickerModule.setLocale('ar-EG')  -> will use it for RTL
     // NgxMaterialTimepickerModule.setLocale('en-US'),
     HttpClientModule,
-    ValidateEqualModule
+    ValidateEqualModule,
+    MatChipsModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -104,6 +107,7 @@ import { ValidateEqualModule } from 'ng-validate-equal';
     MatCheckboxModule,
     MatExpansionModule,
     // NgxMaterialTimepickerModule,
+    MatChipsModule,
   ]
 
 })
