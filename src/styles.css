@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@import '~bootstrap\dist\css\bootstrap.css';
+/* @import '~font-awesome\css\font-awesome.css'; */
+@import '~font-awesome/css/font-awesome.css';
+
+:root{
+    /* Theme colors */
+    --theme-color-rgb-black: rgb(34, 32, 32);
+    --theme-color-black: #000000;
+    --theme-color-dark-gray: #343a40;
+    --theme-color-mid-gray: #6c757d;
+    --theme-color-light-gray: #b3b3b3;
+    --theme-color-yellow: #ffd11a;
+    --theme-color-red: #b30000;
+    --theme-color-white: #ffffff;
+    --theme-color-aliceblue: rgb(240, 248,255);
+
+    /*red required-mark color */
+    --required-red-mark: rgb(255, 0, 0);
+}
+
+
+body{
+    /* padding-top: 50px; */
+    /* overflow-y: hidden; */
+    overflow: scroll; 
+}
+/* div{
+    margin-top: 2px;
+    margin-bottom: 2px;
+} */
+
+/* Theme colors */
+
+.theme-color-rgb-black{
+    color: var(--theme-color-rgb-black);
+}
+.theme-color-black{
+    color: var(--theme-color-black);
+}
+.theme-color-dark-gray{
+    color: var(--theme-color-dark-gray);
+}
+.theme-color-light-gray{
+    color: var(--theme-color-light-gray);
+}
+.theme-color-yellow{
+    color: var(--theme-color-yellow);
+}
+.theme-color-red{
+    color: var(--theme-color-red);
+}
+.theme-color-white{
+    color: var(--theme-color-white);
+}
+.theme-color-aliceblue{
+    color: var(--theme-color-aliceblue);
+}
+
+/* Text Colors */
+
+.text-dark-gray{
+    color : var(--theme-color-mid-gray);
+}
+
+/* BTN Colors */
+.btn-red-text-white{
+    background-color: var(--theme-color-red);;
+    color: var(--theme-color-white);
+}
+.btn-dark-gray-text-white{
+    background-color: var(--theme-color-mid-gray);
+    color: var(--theme-color-white);
+}
+.btn-light-gray-text-white{
+    background-color: var(--theme-color-light-gray);
+    color: var(--theme-color-white);
+}
+.btn-yellow-text-white{
+    background-color: var(--theme-color-yellow);
+    color: var(--theme-color-white);
+}
+
+
+

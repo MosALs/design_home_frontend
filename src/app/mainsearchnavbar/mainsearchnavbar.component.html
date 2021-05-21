@@ -1,0 +1,72 @@
+<div class="row mainsearch-container">
+    <form #searchForm="ngForm" name="form" class="col-12 p-0">
+        <div class="row border border-dark searchnavbar">
+            <div class="col-2  border-right border-dark">
+                <label for="country">Country</label>
+                <select id="country" [(ngModel)]="model.country" name="country"
+                    (ngModelChange)="changeSelectedCountry($event)" #country="ngModel">
+                    <option [value]="country.name" *ngFor="let country of countryList">
+                        {{country.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-2 border-right border-dark">
+                <label for="gov">Governorate</label>
+                <select *ngIf="model.country" id="gov" [(ngModel)]="model.gov" name="gov"
+                    (ngModelChange)="changeSelectedGovernorate($event)" #gov="ngModel">
+                    <option [value]="governorate.name" *ngFor="let governorate of suitableGovernorateList">
+                        {{governorate.name}}
+                    </option>
+                </select>
+                <select *ngIf="!model.country" id="gov" [(ngModel)]="model.gov" name="gov" #gov="ngModel">
+                    <option [value]="governorate.name" *ngFor="let governorate of govenoratesList">
+                        {{governorate.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-2 border-right border-dark">
+                <label for="area">Area</label>
+                <select *ngIf="model.gov && model.country" id="area" [(ngModel)]="model.area" name="area" #area="ngModel">
+                    <option [value]="area.name" *ngFor="let area of suitableAreaList">
+                        {{area.name}}
+                    </option>
+                </select>
+                <select *ngIf="!model.gov" id="area" [(ngModel)]="model.area" name="area" #area="ngModel">
+                    <option [value]="area.name" *ngFor="let area of areasList">
+                        {{area.name}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-2 border-right border-dark">
+                <label for="specialization">Specialization</label>
+                <select id="specialization" [(ngModel)]="model.specialization" name="specialization"
+                    #specialization="ngModel">
+                    <option [value]="specialization" *ngFor="let specialization of specializationsList">
+                        {{specialization}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-2 border-right border-dark">
+                <label for="accountType">Account Type</label>
+                <select id="accountType" [(ngModel)]="model.accountType" name="accountType" #accountType="ngModel">
+                    <option [value]="accountType" *ngFor="let accountType of accountTypesList">
+                        {{accountType}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="col-2 ss">
+                <button type="button" class="btn btn-danger">Search </button>
+            </div>
+        </div>
+        <div class="row ml-20">
+            <div class="col-12 text-center">
+                {{model | json}}
+            </div>
+        </div>
+    </form>
+</div>

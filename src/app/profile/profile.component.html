@@ -1,0 +1,102 @@
+<section class="pt-5 pl-5">
+    <div class="pt-5 pl-5">
+        <div class="row">
+            <div class="col-8">
+                <div *ngFor="let client of clients" class="row p-2">
+                    <div class="col-3 img-fluid d-block text-right">
+                        <img [src]="client.avatar" class="profile-picture">
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-7">
+                        <div class="card">
+                            <div class="card-header">
+                                <p class="h5">{{client.first_name}} {{client.last_name}}</p>
+                            </div>
+                            <div class="card-body">
+                                <p class="h7 py-0">Mobile : {{client.mobile}}</p>
+                                <p class="h7 py-0">Email : {{client.email}}</p>
+                                <p class="h7 py-0">Gender : {{client.gender}}</p>
+                                <p class="h7 py-0">Country : {{client.country}}</p>
+                                <p class="h7 py-0">Governrate: {{client.gov}}</p>
+                                <p class="h7 py-0">Area: {{client.area}}</p>
+                                <p class="h7 py-0">Address: {{client.exact_loaction}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a routerLink="" class="h5">edit your profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <p class="h5">Need a help?</p>
+                                <button class="btn btn-sm btn-dark">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pt-5">
+                    <div class="col-10">
+                        <div class="card">
+                            <div class="card-header text-center p-3">
+                                <div class="h5">Nearby services</div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <ul>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">سباك</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">كهربائي</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">سيراميك</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">محارة</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">ألوميتال</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">نقاش</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">تكييفات</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">نجار</p>
+                                            </li>
+                                            <li class="pb-1">
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">ستورجي</p>
+                                            </li>
+                                            <li>
+                                                <p class="h6">Mohamed Ahmed</p>
+                                                <p class="h7">ميكانيكي</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

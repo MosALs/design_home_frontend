@@ -1,0 +1,511 @@
+
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <div class="row">
+                                                    <div class="col-1">
+                                                    </div>
+                                                    <div class="col-4 btn btn-dark-gray-text-white btn-account-type px-0"
+                                                        (click)="btnLookingForServices()">
+                                                        Looking for Services
+                                                    </div>
+                                                    <div class="col-1 px-2 pt-1 text-account-type">
+                                                        OR
+                                                    </div>
+                                                    <div class="col-5 btn btn-dark-gray-text-white btn-account-type px-0"
+                                                        (click)="btnNeedJobOrSaleProducts()">
+                                                        Need Job/ Sale Products
+                                                    </div>
+                                                    <div class="col-1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    
+                                    <div class="container" *ngIf="needJobOrSaleProducts">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <div class="row">
+                                                    <!-- <div class="btn btn-dark" (click)="accountType.client = !accountType.client;accountType.handworker = false;
+                                            ;accountType.shop = false;accountType.company = false">
+                                                    عميل
+                                                </div> -->
+                                                    <div class="col"></div>
+
+                                                    <!-- <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="accountType.handworker = !accountType.handworker;accountType.client = false;
+                                                ;accountType.shop = false;accountType.company = false; nextStep()">
+                                                        Handworker</button>
+
+                                                    <button mat-stroked-button class="col-3 btn btn-dark m-1"
+                                                        (click)="accountType.shop = !accountType.shop;accountType.client = false;
+                                                accountType.handworker = false;accountType.company = false; nextStep()">
+                                                        Shop</button>
+
+
+                                                    <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="accountType.company = !accountType.company;accountType.client = false;
+                                                accountType.shop = false;accountType.handworker = false; nextStep()">
+                                                        Company</button> -->
+
+                                                        <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="btnHandworker(); nextStep()">
+                                                                Handworker</button>
+        
+                                                        <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="btnShop(); nextStep()">
+                                                                Shop</button>
+        
+                                                        <button mat-stroked-button class="col-3 btn btn-dark m-1" (click)="btnCompany(); nextStep()">
+                                                                Company</button>
+
+                                                    <div class="col"></div>
+
+
+                                                    <div class="col-md-12">
+                                                        <i class="fas fa-store-alt"></i>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" *ngIf="accountType.handworker">
+                                        <mat-expansion-panel class="col-11"
+                                            [expanded]="accordionCurrentStep === 1" (opened)="setStep(1)">
+
+                                            <div class="row pt-2">
+                                                <mat-label class="col-5 pt-2">What is your specialty?</mat-label>
+                                                <mat-form-field class="col-6 pt-0">
+                                                    <mat-label>Specializations</mat-label>
+                                                    <mat-select>
+                                                        <mat-option *ngFor="let specializationname of specialization"
+                                                            [value]="specialization">
+                                                            <!-- <mat-option *ngFor="let specializationname of specialization" [value]="specialization" (click)="validateHandWorkerSubform"> -->
+                                                            {{specializationname}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="row my-1 mx-0 px-0">
+                                                <mat-label class="col-4 m-0 px-0 pt-1">Your working days :
+                                                </mat-label>
+                                                <mat-radio-group class="col-8 m-0 pt-1 px-0">
+                                                    <div class="row">
+                                                        <mat-radio-button class="col-6 m-0 py-0" value="workEveryDay"
+                                                            (click)="btnEveryDay()">
+                                                            Working every day
+                                                        </mat-radio-button>
+                                                        <mat-radio-button class="col-6 m-0 py-0" value="specificDays"
+                                                            (click)="btnSpecificDays()">
+                                                            Work on specific days
+                                                        </mat-radio-button>
+                                                    </div>
+                                                </mat-radio-group>
+                                            </div>
+                                            <div class="row" *ngIf="SpecificDays">
+                                                <div class="col-12">
+                                                    <label>Pick your working days :</label>
+                                                    <section class="checkBox-section">
+                                                        <mat-checkbox *ngFor="let day of daysOfTheWeek" class="px-1">
+                                                            {{day}}
+                                                        </mat-checkbox>
+                                                    </section>
+
+                                                </div>
+                                            </div>
+                                            <div class="row my-1 mx-0 px-0">
+                                                <div class="col pl-0">
+                                                    <mat-label class="row m-0 px-0 pt-1">Your working hours :
+                                                    </mat-label>
+                                                    <mat-radio-group class="row m-0 pt-1 px-0">
+                                                        <div class="row">
+                                                            <mat-radio-button class="col-2 m-0 py-0"
+                                                                (click)="btnWorking24hrs()" value="working24hrs">
+                                                                24 hrs
+                                                            </mat-radio-button>
+                                                            <mat-radio-button class="col-5 m-0 py-0"
+                                                                (click)="btnWorkingDayTime()" value="workingDayTime">
+                                                                Day time (10AM : 5PM)
+                                                            </mat-radio-button>
+                                                            <mat-radio-button class="col-5 m-0 py-0"
+                                                                (click)="btnWorkingNightTime()" value="orkingNightTime">
+                                                                Night time (untill 10PM)
+                                                            </mat-radio-button>
+                                                        </div>
+                                                    </mat-radio-group>
+                                                </div>
+                                            </div>
+                                        </mat-expansion-panel>
+                                    </div>
+                                    <!--محل-->
+                                    <div class="row" *ngIf="accountType.shop">
+                                        <mat-expansion-panel class="col-11"
+                                            [expanded]="accordionCurrentStep === 1" (opened)="setStep(1)">
+                                            <mat-accordion class="col-12 mat-accordion" multi>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <mat-expansion-panel-header class="row">
+                                                            <mat-panel-title class="col-10 p-0">
+                                                                Branches
+                                                            </mat-panel-title>
+                                                            <button mat-icon-button class="col-1 theme-color-yellow"
+                                                                aria-label="addCircle">
+                                                                <mat-icon (click)="addBranch()">add_circle
+                                                                </mat-icon>
+                                                            </button>
+                                                        </mat-expansion-panel-header>
+                                                        <div class="row">
+                                                            <div class="col-10">
+                                                                <mat-form-field>
+                                                                    <input matInput placeholder="Enter your trade name">
+                                                                    <!-- <input matInput placeholder="Enter your trade name"
+                                                                formControlName="Shop's Name" required> 
+                                                            <mat-error>
+                                                                Please provide your shop's name
+                                                            </mat-error>-->
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <mat-form-field>
+                                                                    <mat-label>Governorate</mat-label>
+                                                                    <mat-select>
+                                                                        <!-- <mat-select formControlName="governorate" required> -->
+                                                                        <mat-option [value]="governorate.name"
+                                                                            *ngFor="let governorate of suitableGovernorateList"
+                                                                            (onSelectionChange)="changeSelectedGovernorate($event,governorate)">
+                                                                            {{ governorate.name }}
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                    <!-- <mat-error
+                                                                *ngIf="registerForm.controls['governorate'].hasError('required') && registerForm.controls['governorate'].pristine">
+                                                                Please choose a governorate
+                                                            </mat-error> -->
+                                                                </mat-form-field>
+                                                            </div>
+
+                                                            <div class="col-4">
+                                                                <mat-form-field>
+                                                                    <mat-label>Area</mat-label>
+                                                                    <mat-select>
+                                                                        <!-- <mat-select [(ngModel)]="selectedarea" formControlName="area" required> -->
+                                                                        <mat-option [value]="area.name"
+                                                                            *ngFor="let area of suitableAreaList">
+                                                                            {{ area.name }}
+                                                                        </mat-option>
+                                                                    </mat-select>
+                                                                    <!-- <mat-error
+                                                                *ngIf="registerForm.controls['area'].hasError('required') && registerForm.controls['area'].pristine">
+                                                                Please choose a area
+                                                            </mat-error> -->
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="row" *ngFor="let item of listItems; let i = index"> -->
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <mat-form-field>
+                                                                    <input matInput type="mobile" placeholder="Mobile">
+                                                                    <!-- <input matInput type="mobile" placeholder="Mobile"
+                                                                formControlName="mobile" required>
+                                                            <mat-error>
+                                                                Please provide a mobile
+                                                            </mat-error> -->
+                                                                </mat-form-field>
+                                                            </div>
+                                                            <button mat-icon-button class="col-1 theme-color-yellow"
+                                                                aria-label="addCircle">
+                                                                <!-- <mat-icon id="mobileIndex" (click)="addTradeMobile(i)" [(ngModel)]="mobileIndex[i]">add_circle -->
+                                                                <mat-icon id="mobileIndex" >add_circle
+                                                                </mat-icon>
+                                                            </button>
+                                                            <button mat-icon-button class="col-1 theme-color-red"
+                                                            aria-label="removeCircle">
+                                                            <!-- <mat-icon id="mobileIndex" (click)="removeTradeMobile(i)"[(ngModel)]="mobileIndex[i]">remove_circle -->
+                                                            <mat-icon id="mobileIndex" >remove_circle
+                                                            </mat-icon>
+                                                            </button>
+                                                            <div class="col-4"></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <mat-form-field>
+                                                                    <input matInput type="landLine"
+                                                                        placeholder="Landline">
+                                                                    <!-- <input matInput type="landLine" placeholder="Landline"
+                                                                formControlName="landLine" required>
+                                                            <mat-error>
+                                                                Please provide a landLine
+                                                            </mat-error> -->
+                                                                </mat-form-field>
+                                                            </div>
+                                                            <button mat-icon-button class="col-1 theme-color-yellow"
+                                                                aria-label="addCircle">
+                                                                <mat-icon (click)="addTradeMobile()">add_circle
+                                                                </mat-icon>
+                                                            </button>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <mat-form-field>
+                                                                    <input matInput placeholder="Website">
+                                                                    <!-- <input matInput placeholder="Email" formControlName="email"
+                                                                required>
+                                                            <mat-error>
+                                                                Please provide an email
+                                                            </mat-error> -->
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row pl-3">
+                                                            <mat-label class="col-4 m-0 px-0 pt-1">Your working days :
+                                                            </mat-label>
+                                                            <mat-radio-group class="col-8 m-0 pt-1 px-0">
+                                                                <div class="row">
+                                                                    <mat-radio-button class="col-5 my-0 ml-0 mr-3 p-0"
+                                                                        value="workEveryDay" (click)="btnEveryDay()">
+                                                                        Working every day
+                                                                    </mat-radio-button>
+                                                                    <mat-radio-button class="col-6 m-0 p-0"
+                                                                        value="specificDays"
+                                                                        (click)="btnSpecificDays()">
+                                                                        Work on specific days
+                                                                    </mat-radio-button>
+                                                                </div>
+                                                            </mat-radio-group>
+                                                        </div>
+                                                        <div class="row" *ngIf="SpecificDays">
+                                                            <div class="col-12">
+                                                                <label>Pick your working days :</label>
+                                                                <section class="checkBox-section">
+                                                                    <mat-checkbox *ngFor="let day of daysOfTheWeek"
+                                                                        class="px-1">
+                                                                        {{day}}
+                                                                    </mat-checkbox>
+                                                                </section>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="row pl-3">
+                                                            <div class="col pl-0">
+                                                                <mat-label class="row m-0 px-0 pt-1">Your working hours
+                                                                    :
+                                                                </mat-label>
+                                                                <mat-radio-group class="row m-0 pt-1 px-0">
+                                                                    <div class="row">
+                                                                        <mat-radio-button class="col-2 m-0 py-0"
+                                                                            (click)="btnWorking24hrs()"
+                                                                            value="working24hrs">
+                                                                            24 hrs
+                                                                        </mat-radio-button>
+                                                                        <mat-radio-button class="col-5 m-0 py-0"
+                                                                            (click)="btnWorkingDayTime()"
+                                                                            value="workingDayTime">
+                                                                            Day time (10AM : 5PM)
+                                                                        </mat-radio-button>
+                                                                        <mat-radio-button class="col-5 m-0 py-0"
+                                                                            (click)="btnWorkingNightTime()"
+                                                                            value="orkingNightTime">
+                                                                            Night time (untill 10PM)
+                                                                        </mat-radio-button>
+                                                                    </div>
+                                                                </mat-radio-group>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row pl-3">
+                                                            <div class="col pl-0">
+                                                                <mat-label class="row m-0 px-0 pt-1">Your selling ways :
+                                                                </mat-label>
+                                                                <mat-radio-group class="row m-0 pt-1 px-0">
+                                                                    <div class="row">
+                                                                        <mat-radio-button class="col-4 m-0 py-0"
+                                                                            (click)="btnWholesale()" value="wholesale">
+                                                                            Wholesale
+                                                                        </mat-radio-button>
+                                                                        <mat-radio-button class="col-3 m-0 py-0"
+                                                                            (click)="btnRetail" value="retail">
+                                                                            Retail
+                                                                        </mat-radio-button>
+                                                                        <mat-radio-button class="col-4 m-0 py-0"
+                                                                            (click)="btnWholesaleAndRetail()"
+                                                                            value="bothWholesaleAndRetail">
+                                                                            Wholesale & Retail
+                                                                        </mat-radio-button>
+                                                                    </div>
+                                                                </mat-radio-group>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row pl-3">
+                                                            <mat-label class="col-6 m-0 px-0 pt-1">Do you allow delivery
+                                                                service?
+                                                            </mat-label>
+                                                            <mat-radio-group class="col-5 m-0 pt-1 px-0">
+                                                                <div class="row">
+                                                                    <mat-radio-button class="col-4 m-0 py-0"
+                                                                        (click)="btnDeliveryServiceIsAllowed()"
+                                                                        value="deliveryServiceIsAllowed">
+                                                                        Yes
+                                                                    </mat-radio-button>
+                                                                    <mat-radio-button class="col-4 m-0 py-0"
+                                                                        (click)="btnDeliveryServiceNotAllowed()"
+                                                                        value="deliveryServiceNotAllowed">
+                                                                        No
+                                                                    </mat-radio-button>
+                                                                </div>
+                                                            </mat-radio-group>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </mat-accordion>
+                                        </mat-expansion-panel>
+                                    </div>
+
+
+                                    <!--
+                                <div class="container" style="margin-top: 5%">
+                                <table class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>اضافه فرع جديد</th>
+                                            <th>Title 1</th>
+                                            <th>Title 2</th>
+                                            <th>Title 3</th>
+                                            <th>Title 4</th>
+                                            <th>Title 5</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         <tr *ngFor="let dynamic of dynamicArray; let i = index;">
+                                          <td (click)="deleteRow(i)">
+                                            <i class="fa fa-trash fa-2x"></i>
+                                          </td>
+                                            <td>
+                                              <input [(ngModel)]="dynamicArray[i].title1" class="form-control" type="text"  formControlName="locationName" />
+                                            </td>
+                                            <td>
+                                              <input [(ngModel)]="dynamicArray[i].title2" class="form-control" type="text"  formControlName="locationName" />
+                                            </td>
+                                            <td>
+                                              <input [(ngModel)]="dynamicArray[i].title3" class="form-control" type="text"  formControlName="locationName"/>
+                                            </td>
+                                            <td>
+                                                <input [(ngModel)]="dynamicArray[i].title4" class="form-control" type="text"  formControlName="locationName"/>
+                                              </td>
+                                              <td>
+                                                <input [(ngModel)]="dynamicArray[i].title5" class="form-control" type="text"  formControlName="locationName"/>
+                                              </td>
+                                        </tr>
+                                        <tr>
+                                          <td (click)="addRow(i)">
+                                            <i class="fa fa-plus fa-2x"></i>
+                                          </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                              </div>
+                              -->
+
+                                    <!-- <div class="row">
+                                            <div class="container">
+                                                <div class="col-xs-12 form-group">
+                                                    <div style="margin-top:0px; margin:40px; " formGroupName="itemRows">
+                                                        <ng-container *ngIf="registerForm.controls.itemRows!=null">
+                                                            <div *ngFor="let itemrow of registerForm.controls.itemRows.controls; let i = index"
+                                                                [formGroupName]="i">
+                                                                <div class="row">
+                                                                    <div class="col-md-2 form-group">
+                                                                        <input matInput placeholder="Name"
+                                                                            formControlName="Name">
+                                                                    </div>
+                                                                    <div class="col-md-2 form-group">
+                                                                        <input matInput placeholder="RollNo"
+                                                                            formControlName="RollNo">
+                                                                    </div>
+                                                                    <div class="col-md-2 form-group">
+                                                                        <input matInput placeholder="Class"
+                                                                            formControlName="Class">
+                                                                    </div>
+                                                                    <div class="col-md-2 form-group">
+                                                                        <input matInput placeholder="MobileNo"
+                                                                            formControlName="MobileNo">
+                                                                    </div>
+                                                                    <div class="col-md-2 form-group">
+                                                                        <button (click)="deleteRow(i)"
+                                                                            class="btn btn-danger">X</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </ng-container>
+
+                                                        <div class="form-group" style="text-align:right">
+                                                            <button type="button" (click)="addNewRow()"
+                                                                [disabled]='isDisabled(itemrow)'
+                                                                class="btn btn-primary">Add New
+                                                                Row</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div> -->
+                                    <!-- <mat-form-field>
+                                            <input matInput type="userHours" placeholder="عدد ساعات العمل"
+                                                class="form-control" formControlName="userHours" required>
+                                            <mat-error>
+                                                Please provide a userHours
+                                            </mat-error>
+                                        </mat-form-field> -->
+                                    <!-- <mat-form-field>
+                                            <input matInput type="tradeMobileNumber" placeholder="tradeMobileNumber"
+                                                class="form-control" formControlName="tradeMobileNumber" required>
+                                            <mat-error>
+                                                Please provide a tradeMobileNumber
+                                            </mat-error>
+                                        </mat-form-field> -->
+                                    <!-- <mat-form-field>
+                                            <input matInput type="mobile" placeholder="mobile" class="form-control"
+                                                formControlName="mobile" required>
+                                            <mat-error>
+                                                Please provide a mobile
+                                            </mat-error>
+                                        </mat-form-field> -->
+                                    <!-- <mat-form-field>
+                                            <input matInput type="mobile" placeholder="mobile" class="form-control"
+                                                formControlName="mobile" required>
+                                            <mat-error>
+                                                Please provide a mobile
+                                            </mat-error>
+                                        </mat-form-field> -->
+                                    <!-- <mat-form-field>
+                                            <input matInput type="mobile" placeholder="mobile" class="form-control"
+                                                formControlName="mobile" required>
+                                            <mat-error>
+                                                Please provide a mobile
+                                            </mat-error>
+                                        </mat-form-field> -->
+                                    <!-- <mat-form-field>
+                                            <input matInput type="mobile" placeholder="mobile" class="form-control"
+                                                formControlName="mobile" required>
+                                            <mat-error>
+                                                Please provide a mobile
+                                            </mat-error>
+                                        </mat-form-field> -->
+                                    <!-- <mat-label>اختار التخصص</mat-label>
+                                        <mat-form-field>
+                                            <mat-label>Favorite food</mat-label>
+                                            <mat-select>
+                                                <mat-option *ngFor="let specializationname of specialization">
+                                                    {{specializationname}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field> -->
+                                    <!-- </div> -->
+
+                                    <!--شركه-->
+                                    <!-- <div *ngIf="accountType.company">
+                                        Current week dataشركه
+                                    </div> -->
