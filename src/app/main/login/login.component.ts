@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit {
         this.loginInvalid = true;
       }
     } else {
+      
       this.formSubmitAttempt = true;
     }
   }
