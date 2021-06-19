@@ -24,6 +24,7 @@ import { SpecializationSmallBoxesSkeletonComponent } from './specializations-sma
     MustMatchDirective,
     SpecializationsSmallBoxesSliderComponent,
     SpecializationSmallBoxesSkeletonComponent,
+    
 
     
   ],

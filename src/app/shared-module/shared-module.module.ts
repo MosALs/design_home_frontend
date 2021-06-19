@@ -25,7 +25,7 @@ import { ButtonsModule, CollapseModule, WavesModule } from 'angular-bootstrap-md
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { Ng2DropdownModule } from 'ng2-material-dropdown';
-// import {NgImageSliderModule} from 'ng-image-slider';
+import {NgImageSliderModule} from 'ng-image-slider';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatExpansionModule} from '@angular/material/expansion';
 // import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
@@ -72,7 +72,7 @@ import {MatChipsModule} from '@angular/material/chips';
     MDBBootstrapModule.forRoot(),
     // AngularFontAwesomeModule,
     Ng2DropdownModule,
-    // NgImageSliderModule,
+    NgImageSliderModule,
     MatCheckboxModule,
     MatExpansionModule,
     // NgxMaterialTimepickerModule.setLocale('ar-EG')  -> will use it for RTL

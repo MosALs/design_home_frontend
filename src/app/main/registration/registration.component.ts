@@ -11,6 +11,8 @@ import { FormGroup } from '@angular/forms';
 })
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -145,6 +147,7 @@ export class UserProfile {
   public trade?: ITrade;
   constructor() { }
 }
+
 
 export class ITrade {
   constructor(

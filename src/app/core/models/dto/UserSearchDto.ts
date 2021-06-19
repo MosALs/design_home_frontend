@@ -3,8 +3,8 @@ export class UaerSearchDto {
 	  specializationName:string;
 	  accountTypeName:string;
 	  governoratName:string;
-      country:string;
-      
-	
+	  country:string;
+
+
 
 } 

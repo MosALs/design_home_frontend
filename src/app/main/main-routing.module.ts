@@ -15,6 +15,7 @@ const routes: Routes = [
   {path:UIPagesUrls.REGISTERATION_PAGE_URL, component: RegistrationComponent},
   {path:UIPagesUrls.LOGIN_PAGE_URL,component:LoginComponent},
   {path:UIPagesUrls.PROFILE_PAGE_URL,component:ProfileComponent},
+  {path:UIPagesUrls.PROFILE_FORM_PAGE_URL,component:ProfileComponent},
   {path:UIPagesUrls.MAINSEARCHNAVBAR_PAGE_URL,component:MainsearchnavbarComponent},
   {path:UIPagesUrls.MEDIASLIDER_PAGE_URL,component:MediaSliderComponent},
 
