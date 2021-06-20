@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Authentication } from 'src/app/constants/BackEnd_URLS';
 import { AuthenticationRequest } from '../models/model/AuthenticationRequest.model';
 import { Observable } from 'rxjs';
+import { addListener } from 'process';
 
 
 @Injectable({
@@ -10,6 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthenticationService {
   private _obs:Observable<Object>;
+  private authenticated = false;
 
 
   login(username: any, password: any):String {
@@ -18,8 +20,15 @@ export class AuthenticationService {
   }
   checkAuthenticated():boolean{
     //throw new Error("Method not implemented.");
-    return true;
+    console.log("KMGN ==checkAuthenticated: " ,this.authenticated);
+    
+    return this.authenticated;
   }
+  setAuthenticated(x: boolean){
+    this.authenticated = x;
+  }
+
+
 
   constructor(private http:HttpClient ){ }
 

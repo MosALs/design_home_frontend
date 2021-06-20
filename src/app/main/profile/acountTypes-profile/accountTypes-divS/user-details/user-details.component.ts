@@ -9,13 +9,13 @@ import { UserProfileDto } from 'src/app/core/models/dto/UserProfileDto';
 export class UserDetailsComponent implements OnInit {
 
   // @Output() public sendData = new EventEmitter<string>();
-  @Input() userDetails: UserProfileDto;
+  @Input() userProfile: UserProfileDto;
   constructor() { }
 
 
   ngOnInit(): void {
     console.log('user details compo ngonint');
-    console.log('name ====', this.userDetails);
+    console.log('name ====', this.userProfile);
 
   }
 }

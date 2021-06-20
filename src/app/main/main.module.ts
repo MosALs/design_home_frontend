@@ -12,6 +12,8 @@ import { MediaSliderComponent } from '../media-slider/media-slider.component';
 import { MustMatchDirective } from './registration/MustMatchDirective';
 import { SpecializationsSmallBoxesSliderComponent } from './specializations-small-boxes-slider/specializations-small-boxes-slider.component';
 import { SpecializationSmallBoxesSkeletonComponent } from './specializations-small-boxes-slider/specialization-small-boxes-skeleton/specialization-small-boxes-skeleton.component';
+import { UserDetailsComponent } from './profile/acountTypes-profile/accountTypes-divS/user-details/user-details.component';
+import { BranchesComponent } from './profile/acountTypes-profile/accountTypes-divS/profile-branches/branches/branches.component';
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { SpecializationSmallBoxesSkeletonComponent } from './specializations-sma
     MustMatchDirective,
     SpecializationsSmallBoxesSliderComponent,
     SpecializationSmallBoxesSkeletonComponent,
-    
+    UserDetailsComponent,
+    BranchesComponent
 
     
   ],
@@ -40,4 +43,6 @@ import { SpecializationSmallBoxesSkeletonComponent } from './specializations-sma
   providers:[ AuthenticationService]
 
 })
-export class MainModule { }
+export class MainModule { 
+  
+}

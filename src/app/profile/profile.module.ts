@@ -7,12 +7,13 @@ import { EditSelfProfilePageComponent } from './edit-self-profile-page/edit-self
 import { ViewBusinessProfilePageComponent } from './view-business-profile-page/view-business-profile-page.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [ProfileComponent,
     EditSelfProfilePageComponent,
-    ViewBusinessProfilePageComponent],
+    ViewBusinessProfilePageComponent,
+  ],
   imports: [
+    
     CommonModule,
     ProfileRoutingModule,
     HttpClientModule

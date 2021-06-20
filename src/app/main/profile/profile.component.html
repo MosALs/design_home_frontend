@@ -2,25 +2,21 @@
     <div class="pt-5 pl-5">
         <div class="row">
             <div class="col-8">
-                <div *ngFor="let client of clients" class="row p-2">
-                    <div class="col-3 img-fluid d-block text-right">
+                <div class="row p-2">
+                    <!-- <div class="col-3 img-fluid d-block text-right">
                         <img [src]="client.avatar" class="profile-picture">
-                    </div>
+                    </div> -->
                     <div class="col-1"></div>
                     <div class="col-7">
                         <div class="card">
                             <div class="card-header">
-                                <p class="h5">{{client.first_name}} {{client.last_name}}</p>
+                                <p class="h5">{{userProfile?.name}}</p>
                             </div>
-                            <div class="card-body">
-                                <p class="h7 py-0">Mobile : {{client.mobile}}</p>
-                                <p class="h7 py-0">Email : {{client.email}}</p>
-                                <p class="h7 py-0">Gender : {{client.gender}}</p>
-                                <p class="h7 py-0">Country : {{client.country}}</p>
-                                <p class="h7 py-0">Governrate: {{client.gov}}</p>
-                                <p class="h7 py-0">Area: {{client.area}}</p>
-                                <p class="h7 py-0">Address: {{client.exact_loaction}}</p>
+                            <div class="card-body" *ngIf="userProfile">
+                                <userdetails [userProfile]="userProfile"></userdetails>
+                                <branches [userProfile]="userProfile"></branches>
                             </div>
+
                             <div class="card-footer">
                                 <a routerLink="" class="h5">edit your profile</a>
                             </div>

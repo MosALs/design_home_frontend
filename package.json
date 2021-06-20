@@ -37,6 +37,7 @@
     "glyphicons": "^0.2.0",
     "glyphicons-only-bootstrap": "^1.0.1",
     "icons-ui": "^0.4.1",
+    "jwt-decode": "^3.1.2",
     "mdbootstrap": "^4.19.1",
     "ng-image-slider": "^2.6.4",
     "ng-validate-equal": "^1.0.4",

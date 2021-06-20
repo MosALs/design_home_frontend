@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AuthenticationService } from '../core/services/authentication.service';
+// import { AuthenticationService } from '../core/services/authentication.service';
 import { AuthenticationRequest } from '../core/models/model/AuthenticationRequest.model';
 import { Observable } from 'rxjs';
 import { BackEndFacadeService } from './back-end-facade.service';
-import { IClient } from '../core/models/model/IClient';
-import { UserProfileDto } from '../core/models/dto/UserProfileDto';
+// import { IClient } from '../core/models/model/IClient';
+// import { UserProfileDto } from '../core/models/dto/UserProfileDto';
+import { ReturnedResultModel } from '../core/models/dto/ReturnedResultModel';
 
 
 
@@ -13,6 +14,7 @@ import { UserProfileDto } from '../core/models/dto/UserProfileDto';
 })
 export class AuthFacadeService {
 
+  private authenticated = false;
   private  _authenticationRequest: AuthenticationRequest= new AuthenticationRequest();
   //private _iclinet:IClient =new IClient();
 
@@ -32,15 +34,14 @@ export class AuthFacadeService {
   }
 
 
-  
-  getUserInfo(userId: number):Observable<UserProfileDto>{
-    return this._backEndFacadService.getUserProfileService().getUserProfile(userId);
+  getUserInfo(Id: number):Observable<ReturnedResultModel>{
+    return this._backEndFacadService.getUserProfileService().getUserProfile(Id);
   }
 
-  gsetUserProfileInfo(userId:any):Observable<UserProfileDto[]>{
-    return this._backEndFacadService.getUserProfileService().getUserProfileInfo(userId);
+  // gsetUserProfileInfo(userId:any):Observable<UserProfileDto[]>{
+    // return this._backEndFacadService.getUserProfileService().getUserProfileInfo(userId);
     
-  }
+  // }
 
 
 }

@@ -1,0 +1,21 @@
+<div *ngFor="let singleUserCollection of userProfile?.userCollection" class="branch-row my-2">
+    <p class="h7 py-0">Country : {{singleUserCollection?.countryName}}</p>
+    <p class="h7 py-0">Governorate : {{singleUserCollection?.governoratName}}</p>
+    <p class="h7 py-0">Area : {{singleUserCollection?.areaName}}</p>
+    <p class="h7 py-0">Address : {{singleUserCollection?.locationName}}</p>
+    <p class="h7 py-0">Specialization : {{singleUserCollection.specializationName}}</p>
+    <p *ngIf="singleUserCollection?.phone.mobileOne" class="h7 py-0">Mobile : {{singleUserCollection?.phone.mobileOne}}
+    </p>
+    <p *ngIf="singleUserCollection?.phone.mobileTwo" class="h7 py-0">Mobile : {{singleUserCollection?.phone.mobileTwo}}
+    </p>
+    <p *ngIf="singleUserCollection?.phone.mobileThree" class="h7 py-0">Mobile :
+        {{singleUserCollection?.phone.mobileThree}}</p>
+    <p *ngIf="singleUserCollection?.phone.mobileFour" class="h7 py-0">Mobile :
+        {{singleUserCollection?.phone.mobileFour}}</p>
+    <p *ngIf="singleUserCollection?.phone.landLineOne" class="h7 py-0">Land Line :
+        {{singleUserCollection?.phone.landLineOne}}</p>
+    <p *ngIf="singleUserCollection?.phone.landLineTwo" class="h7 py-0">Land Line :
+        {{singleUserCollection?.phone.landLineTwo}}</p>
+    <p *ngIf="singleUserCollection?.phone.landLineThree" class="h7 py-0">Land Line :
+        {{singleUserCollection?.phone.landLineThree}}</p>
+</div>

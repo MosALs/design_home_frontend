@@ -25,6 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppComponent,
     NavbarComponent,
     FooterComponent,
+
+  
     
 
   ],

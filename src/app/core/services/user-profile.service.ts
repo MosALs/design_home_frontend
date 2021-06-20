@@ -23,9 +23,9 @@ export class UserProfileService {
   //   return this._obs;
   // }
 
-  getUserProfile(userId: number): Observable<ReturnedResultModel> {
+  getUserProfile(Id: number): Observable<ReturnedResultModel> {
     let result :Observable<ReturnedResultModel> = 
-    this.http.get(UaerProfileInfoURL.USERPROFILE_URL + '/'+userId) as Observable<ReturnedResultModel>;
+    this.http.get(UaerProfileInfoURL.USERPROFILE_URL + '/'+Id) as Observable<ReturnedResultModel>;
     return result;
   }
     
@@ -35,10 +35,10 @@ export class UserProfileService {
     //   catchError(ErrorHandler.handleErrors)
     // );
 
-   public getUserProfileInfo(userId:number):Observable<UserProfileDto[]>{
-     return this.http.get<UserProfileDto[]>(UaerProfileInfoURL.USERPROFILE_URL + '?'+userId)
-     .pipe(retry(1),catchError(ErrorHandler.handleErrors));
+  //  public getUserProfileInfo(userId:number):Observable<UserProfileDto[]>{
+  //    return this.http.get<UserProfileDto[]>(UaerProfileInfoURL.USERPROFILE_URL + '?'+userId)
+  //    .pipe(retry(1),catchError(ErrorHandler.handleErrors));
      
-   } 
+  //  } 
   
 }
