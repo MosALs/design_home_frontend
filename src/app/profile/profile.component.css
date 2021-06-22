@@ -1,12 +1,69 @@
 .profile-picture{
     display: inline-block;
-    width: 220px;
-    height: 220px;
+    width: 205px;
+    height: 205px;
     border-radius: 50%;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     /* margin-right: -30px !important; */
     /* z-index: 100; */
     /* position:fixed; */
+}
+
+.pp{
+    margin-right: -60px !important;
+}
+section{
+    /* background: #28223f; */
+    background: var(--theme-color-light-gray);
+}
+
+.container{
+    user-select: none;
+    /* margin: 100px auto; */
+    background: #231e39;
+    color: #b3b8cd;
+    border-radius: 5px;
+    /* width: 350px; */
+    width: 100%;
+    /* text-align: center; */
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .75);
+}
+
+.cover-photo{
+    height: 30px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    /* text-align: left; */
+    /* background-color: lightblue; */
+    background-image: linear-gradient(to top left, rgba(192, 192, 192, 0), rgba(192, 192, 192, 0.5));
+}
+.profile{
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    /* margin: 93px 0 0 -175px; */
+    text-align: left;
+    /* border: 2px solid rgba(242, 242, 242, 0.1); */
+    padding: 7px;
+    background-image: linear-gradient(to bottom, rgba(192, 192, 192, 0.6), rgba(192, 192, 192, 0));
+}
+.profile-name{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0 0 120px;
+    /* vertical-align: middle; */
+    text-align: center;
+}
+.account-type{
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: middle;
+}
+.about{
+    margin-top: 35px;
+    line-height: 21px;
+    text-align: left;
 }

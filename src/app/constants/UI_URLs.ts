@@ -10,7 +10,7 @@ export const UIPagesUrls = {
     USERDETAILS_PAGE_URL:"userdetails",
 
     //test//
-    // specializations_small_boxes_slider: "slider",
+    specializations_small_boxes_slider: "slider",
 
     REG_PAGE_URL: "reg",
     ACCOUNT_TYPE_ENTRANCE_PAGE_URL: "accountTypeEntrance",

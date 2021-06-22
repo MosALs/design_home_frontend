@@ -23,3 +23,21 @@
     font-size: x-large;
     text-decoration-color: var(--theme-color-black);
 }
+i{
+    padding-right: 8px;
+}
+.fa-facebook-f{
+    color: #3b5998;
+}
+.fa-youtube{
+    color: #FF0000;
+}
+.fa-twitter{
+    color: #00acee;
+}
+.fa-linkedin{
+    color: #0e76a8 ;
+}
+.fa-whatsapp{
+    color: #25D366 ;
+}

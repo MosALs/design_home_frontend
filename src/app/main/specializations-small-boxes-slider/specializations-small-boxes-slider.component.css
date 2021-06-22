@@ -2,6 +2,8 @@
   app-specialization-small-boxes-skeleton {
     float: left;
     width: 20%;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
   }
 
   .mat-icon {

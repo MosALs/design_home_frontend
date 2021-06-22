@@ -38,6 +38,11 @@ export class AuthFacadeService {
     return this._backEndFacadService.getUserProfileService().getUserProfile(Id);
   }
 
+  
+  // getUserInfo(userId: number):Observable<UserProfileDto>{
+  //   return this._backEndFacadService.getUserProfileService().getUserProfile(userId);
+  // }
+
   // gsetUserProfileInfo(userId:any):Observable<UserProfileDto[]>{
     // return this._backEndFacadService.getUserProfileService().getUserProfileInfo(userId);
     

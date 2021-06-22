@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:UIPagesUrls.USERDETAILS_PAGE_URL,component:UserDetailsComponent},
 
   //test//
-  // {path: UIPagesUrls.specializations_small_boxes_slider, component:SpecializationsSmallBoxesSliderComponent}
+  {path: UIPagesUrls.specializations_small_boxes_slider, component:SpecializationsSmallBoxesSliderComponent}
 
 ];
 
