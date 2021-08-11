@@ -1,4 +1,6 @@
 import { UserDataCollectionDTO } from './UserDataCollectionDTO';
+import { UserRatingAndReviewsDTO } from './UserRatingAndReviewsDTO';
+import { WorkOderDto } from './WorkOrderDto';
 export interface UserProfileDto {
 	name: string;
 	userName: string;
@@ -18,4 +20,6 @@ export interface UserProfileDto {
 	wholeRetailSale: String;
 	deliveryNoDelivery: String;
 	userCollection: UserDataCollectionDTO[];
+	userRatingsAndReviews:UserRatingAndReviewsDTO[];
+	workOderDto:WorkOderDto[];
 }

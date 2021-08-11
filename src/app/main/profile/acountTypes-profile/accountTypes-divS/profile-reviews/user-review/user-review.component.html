@@ -1,0 +1,10 @@
+<div class="card">
+    <!-- <div *ngFor="let singleUserCollection of userProfile?.userCollection" class="branch-row my-2"> -->
+    <div *ngFor="let userrating of userProfile?.workOrderDTOs" class="branch-row my-2">
+        <p class="h1 py-0">Review : {{userrating?.review}}</p>
+        <p class="h1 py-0">Rating : {{userrating?.rating}}</p>
+            <!-- <h2>ffffffffffffff</h2> -->
+            <!-- <p *ngIf="singleUserCollection?.phone.mobileThree" class="h7 py-0">Mobile :
+                {{singleUserCollection?.phone.mobileThree}}</p> -->
+    </div>
+</div>

@@ -18,6 +18,13 @@ border-radius: 50%;
 .profile-details{
 background-color: lightcoral;
 } */
+.card-body{
+    background-color: chartreuse;
+}
+.ss{
+    font-size: larger;
+    font-weight: bolder;
+}
 
 .card-container{
     width: 300px;
@@ -78,7 +85,9 @@ background-color: lightcoral;
     
 }
 .divtwo{
-    background-color: aqua;
+    background-color: lightsalmon;
+font-size: x-large;
+font-weight: bolder;
 }
 .word{
     background-color: darkblue;

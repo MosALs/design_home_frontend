@@ -14,6 +14,7 @@ import { SpecializationsSmallBoxesSliderComponent } from './specializations-smal
 import { SpecializationSmallBoxesSkeletonComponent } from './specializations-small-boxes-slider/specialization-small-boxes-skeleton/specialization-small-boxes-skeleton.component';
 import { UserDetailsComponent } from './profile/acountTypes-profile/accountTypes-divS/user-details/user-details.component';
 import { BranchesComponent } from './profile/acountTypes-profile/accountTypes-divS/profile-branches/branches/branches.component';
+import { UserReviewComponent } from './profile/acountTypes-profile/accountTypes-divS/profile-reviews/user-review/user-review.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { BranchesComponent } from './profile/acountTypes-profile/accountTypes-di
     SpecializationsSmallBoxesSliderComponent,
     SpecializationSmallBoxesSkeletonComponent,
     UserDetailsComponent,
-    BranchesComponent
+    BranchesComponent,
+    UserReviewComponent
 
     
   ],

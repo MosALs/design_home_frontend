@@ -11,6 +11,7 @@ import { ReturnedResultModel } from '../../core/models/dto/ReturnedResultModel';
 import { UserDataCollectionDTO } from '../../core/models/dto/UserDataCollectionDTO';
 import { UserProfile } from '../registration/registration.component';
 import { PhoneEntity } from '../../core/models/entities/phone.entity';
+import { UserRatingAndReviewsDTO } from '../../core/models/dto/UserRatingAndReviewsDTO';
 
 
 @Component({
@@ -26,10 +27,10 @@ export class ProfileComponent implements OnInit {
   // public errorMessage: string = '';
 
   // private userProfileDto:UserProfileDto;
-  phoneList: PhoneEntity[];
+  // phoneList: PhoneEntity[];
   userProfile: UserProfileDto; // 1- undefined 2- oninit -> call service - set userProfile with data 
-  userDataCollection: UserDataCollectionDTO;
-  userDataCollectionList: UserDataCollectionDTO[];
+  // userDataCollection: UserDataCollectionDTO;
+  // userDataCollectionList: UserDataCollectionDTO[];
 
   constructor(private router: Router,
     private _authFacadServie: AuthFacadeService,
@@ -73,6 +74,8 @@ export class ProfileComponent implements OnInit {
           // this.userDataCollection = data.result as UserDataCollectionDTO;
 
           console.log('KMGN == user profile: ', this.userProfile);
+          console.log('KMGN == user collection: ', this.userProfile.userCollection);
+          console.log('KMGN == USER userRating',this.userProfile.userRatingsAndReviews);
           // console.log('user collection locationName[0]: ',this.userProfile.userCollection[0].locationName);
           // console.log('user collection phone[0]: ',this.userProfile.userCollection[0].phone);
           // console.log('user collection phone[0]: ',this.userProfile.userCollection[0].phone.mobileOne);
@@ -91,38 +94,6 @@ export class ProfileComponent implements OnInit {
       }
     )
   }
-  //   this.returnUrl = UIPagesUrls.LOGIN_PAGE_URL;
-  //   if (await this._authFacadServie.checkAuthenticated()) {
-  //     await this.router.navigate([this.returnUrl]);
-  //   }
-  // }
-  // this.clientService.getAllClients().subscribe((data) => {
-  //   this.clients = data;
-  //   console.log("clients", this.clients)
-  // }, (error) => {
-  //   this.errorMessage = error;
-  // });
-
-
-  // this._authFacadServie.getUserInfo(1009).subscribe((data)=>{
-  //   console.log(data)
-  // });
-
-
-  // @PostMApping(value="/product/update")
-  // public String updateProduct(@RequestBody Product product){
-  // if(product.getId() != null){
-  //          Optional<Product> product = productRepository.save(product);
-  // }
-  //     
-  //     return "product updated suceessfully";
-  // }
-  // value="";
-  // sendData(value){
-  //     this.value=value;
-  //   }
-
-
 
 }
 
